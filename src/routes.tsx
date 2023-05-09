@@ -5,14 +5,12 @@ import { Deliver } from "./pages/Deliver";
 
 export function Routes() {
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route path="/home" element={<Home />} />
-                <Route path="/order" element={<Order />} />
-                <Route path="/deliver" element={<Deliver />} />
+        <Switch>
+            <Route path="/home" element={<Home />} />
+            <Route path="/order" element={<Order />} />
+            <Route path="/deliver" element={<Deliver />} />
 
-                <Route path="*" element={<Navigate to="/home" />} />
-            </Switch>
-        </BrowserRouter>
+            <Route path="*" element={<Navigate to="/home" />} />
+        </Switch>
     )
 }
