@@ -51,12 +51,22 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     #root {
-        max-width: 1120px;
+        max-width: 1440px;
         margin: 0 auto;
     }
-    
+
     h1, h2, h3, h4, h5, h6, strong {
         font-family: 'Baloo 2', cursive;
+        color: var(--base-subtitle);
+        font-weight: 800;
+        line-height: 130%;
+    }
+
+    p {
+        color: var(--base-text);
+    }
+    
+    h1, h2 {
         font-weight: bolder;
         font-size: 3rem;
     }

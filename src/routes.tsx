@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes as Switch, Route, Navigate } from "react-router-dom";
+import { Routes as Switch, Route, Navigate } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Order } from "./pages/Order";
 import { Deliver } from "./pages/Deliver";
@@ -6,7 +6,7 @@ import { Deliver } from "./pages/Deliver";
 export function Routes() {
     return (
         <Switch>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/order" element={<Order />} />
             <Route path="/deliver" element={<Deliver />} />
 
