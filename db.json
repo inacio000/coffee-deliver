@@ -1,0 +1,28 @@
+{
+    "coffe": [
+      {
+        "id": 1,
+        "title": "Expresso Tradicional",
+        "description": "O tradicional café feito com água quente e grãos moídos",
+        "price": 990,
+        "qt": 2,
+        "img": "coffe.png"
+      },
+      {
+        "id": 2,
+        "title": "Expresso Cremoso",
+        "description": "Café expresso tradicional com espuma cremosa",
+        "price": 990,
+        "qt": 2,
+        "img": "coffe.png"
+      }
+    ],
+    "order": [
+      {
+        "id": 1,
+        "streat": "Calemba 2",
+        "city": "Luanda",
+        "number": ""
+      }
+    ]
+  }
