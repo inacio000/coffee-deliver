@@ -21,6 +21,8 @@ export const GlobalStyle = createGlobalStyle`
         --base-button: #E6E5E5;
         --base-input: #EDEDED;
         --base-card: #F3F2F2;
+
+        --icons-color: #FAFAFA;
     }
 
     * {
@@ -45,17 +47,18 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     body, input, textarea, button {
-        font-family: 'Baloo 2', cursive;
         font-family: 'Roboto', sans-serif;
     }
-
+    
     #root {
         max-width: 1120px;
         margin: 0 auto;
     }
-
+    
     h1, h2, h3, h4, h5, h6, strong {
-        font-weight: 600;
+        font-family: 'Baloo 2', cursive;
+        font-weight: bolder;
+        font-size: 3rem;
     }
 
     button {
