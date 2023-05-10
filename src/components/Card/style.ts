@@ -59,7 +59,7 @@ export const FooterCad = styled.div`
     justify-content: space-between;
 
     p > span {
-        font-size: 8px;
+        font-size: 10px;
     }
 
     div {
@@ -81,10 +81,8 @@ export const FooterButtons = styled.section`
     gap: 0.5rem;
 
     button {
-        border: none;
-        background: var(--base-button);
-
         svg {
+            margin-top: 0.3rem;
             color: var(--purple);
         }
     }

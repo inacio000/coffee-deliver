@@ -6,7 +6,8 @@ export const Container = styled.div`
   justify-content: space-between;
 
   background-image: url(${bg});
-  padding: 5rem 1rem;
+  padding: 10rem 1rem 5rem;
+  /* margin-top: 5rem; */
 `;
 
 export const LeftContent = styled.div`

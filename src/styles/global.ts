@@ -1,6 +1,9 @@
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
+    ::-webkit-scrollbar {
+       display: none;
+    }
 
     :root {
         --yellow-dark: #C47F17;
@@ -16,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
         --base-subtitle: #403937;
         --base-text: #574F4D;
         --base-label: #8D8686;
+        --base-white: #FFFFFF;
 
         --base-hover: #D7D5D5;
         --base-button: #E6E5E5;
@@ -49,6 +53,10 @@ export const GlobalStyle = createGlobalStyle`
     body, input, textarea, button {
         font-family: 'Roboto', sans-serif;
     }
+
+    section {
+        width: 100%;
+    }
     
     #root {
         max-width: 1440px;
@@ -57,22 +65,25 @@ export const GlobalStyle = createGlobalStyle`
 
     h1, h2, h3, h4, h5, h6, strong {
         font-family: 'Baloo 2', cursive;
-        color: var(--base-subtitle);
+        color: var(--base-text);
         font-weight: 800;
         line-height: 130%;
     }
-
+    
     p {
         color: var(--base-text);
     }
     
     h1, h2 {
+        color: var(--base-subtitle);
         font-weight: bolder;
         font-size: 3rem;
     }
 
     button {
         cursor: pointer;
+        border: none;
+        background: var(--base-button);
     }
 
     [disable] {

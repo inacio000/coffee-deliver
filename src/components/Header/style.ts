@@ -2,12 +2,21 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.header`
+    background: var(--background);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 `
 
 export const Content = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    margin: 0 auto;
+    max-width: 1440px;
     
     padding: 2rem 1rem;
     
@@ -25,9 +34,22 @@ export const Order = styled(Link)`
     padding: 0.5rem;
     border-radius: 0.5rem;
     height: 100%;
+    position: relative;
 
     span {
-        display: none;
+        width: 1.25rem;
+        height: 1.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        color: var(--background);
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: -0.5rem;
+        background: var(--yellow-dark);
+        border-radius: 50%;
     }
 
     img {
