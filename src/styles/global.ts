@@ -27,6 +27,8 @@ export const GlobalStyle = createGlobalStyle`
         --base-card: #F3F2F2;
 
         --icons-color: #FAFAFA;
+
+        --border-color: linear-gradient(102.89deg, #DBAC2C 2.61%, #8047F8 98.76%);
     }
 
     * {
@@ -71,6 +73,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     p {
+        font-family: 'Roboto', sans-serif;
         color: var(--base-text);
     }
     
