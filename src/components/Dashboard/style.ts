@@ -7,7 +7,12 @@ export const Container = styled.div`
 
   background-image: url(${bg});
   padding: 10rem 1rem 5rem;
-  /* margin-top: 5rem; */
+  
+  @media(max-width: 1030px) {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 
 export const LeftContent = styled.div`
@@ -17,15 +22,61 @@ export const LeftContent = styled.div`
   max-width: 600px;
 
   .coffee-title {
-    margin-bottom: 4.125rem;
+    margin-bottom: 3rem;
 
     p {
       margin-top: 1rem;
     }
   }
+
+  img {
+    width: 200px;
+    display: none;
+  }
+
+  @media(max-width: 1030px) {
+    margin-bottom: 2rem;
+  }
+  
+  @media(max-width: 570px) {
+    .coffee-title {
+      margin-bottom: 2rem;
+    }
+
+    .coffee-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  @media(max-width: 500px) {
+    .coffee-main {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .coffee-title {
+      h1 {
+        font-size: 32px;
+      }
+    }
+  }
+  
 `;
 
-export const RightContent = styled.div``;
+export const RightContent = styled.div`
+  @media(max-width: 570px) {
+    img {
+      display: none;
+      width: 400px;
+    }
+  }
+`;
 
 export const StepList = styled.ul`
   display: grid;
@@ -52,6 +103,16 @@ export const StepList = styled.ul`
 
   svg {
     color: var(--icons-color);
+  }
+
+  @media(max-width: 570px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media(max-width: 320px) {
+  row-gap: 1.5rem;
+    
   }
 `;
 

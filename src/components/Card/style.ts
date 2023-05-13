@@ -34,7 +34,6 @@ export const MainCard = styled.div`
         margin-bottom: 1rem;
 
         background: var(--yellow-light);
-        
 
         span {
             font-size: 10px;

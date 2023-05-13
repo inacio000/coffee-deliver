@@ -41,30 +41,38 @@ export function Order() {
                         </HeaderForm>
                         <FormBody>
                             <CpfInput
+                                className="cpf-input"
                                 type="text"
                                 placeholder="CEP"
                             />
-                            <StreetInput 
+                            <StreetInput
+                                className="street-input" 
                                 type="text" 
                                 placeholder="Rua"
                             />
                             <NumberInput 
+                                className="number-input" 
                                 type="" 
                                 placeholder="Número"
                             />
                             <ComplementInput 
+                                className="complement-input" 
                                 type="text"
                                 placeholder="Complemento"
                             />
                             <Neighborhood 
+                                className="neighborhood-input" 
                                 type="text" 
                                 placeholder="Bairro"
                             />
                             <CityInput 
+                                className="city-input" 
                                 type="text" 
                                 placeholder="Cidade"
                             />
-                            <UfInput type="text"
+                            <UfInput 
+                                className="uf-input" 
+                                type="text"
                                 placeholder="UF"
                             />
                         </FormBody>
@@ -78,15 +86,21 @@ export function Order() {
                             <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
                         </HeaderPaymen>
                         <MethodPayment>
-                            <button type="button">
+                            <button 
+                                className=""
+                                type="button">
                                 <TbCreditCard />
                                 <span>Cartão de crédito</span>
                             </button>
-                            <button type="button">
+                            <button 
+                                className=""
+                                type="button">
                                 <TbCreditCard />
                                 <span>cartão de débito</span>
                             </button>
-                            <button type="button">
+                            <button 
+                                className=""
+                                type="button">
                                 <TbCreditCard />
                                 <span>dinheiro</span>
                             </button>
@@ -98,9 +112,9 @@ export function Order() {
             <RightContent>
                 <h3>Complete seu pedido</h3>
                 <Cart>
+                    {/* <CardCart/>
                     <CardCart/>
-                    <CardCart/>
-                    <CardCart/>
+                    <CardCart/> */}
                     <CartFooter>
                         <div>
                             <p>Total de itens</p>

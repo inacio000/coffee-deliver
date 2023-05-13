@@ -14,32 +14,37 @@ export function Dashboard() {
                     <h1>Encontre o café perfeito para qualquer hora do dia</h1>
                     <p>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</p>
                 </div>
-                <StepList>
-                    <li>
-                        <CartIcon>
-                            <FaShoppingCart/>
-                        </CartIcon>
-                        <p>Compra simples e segura</p>
-                    </li>
-                    <li>
-                        <PackageIcon>
-                            <BiPackage/>
-                        </PackageIcon>
-                        <p>Embalagem mantém o café intacto</p>
-                    </li>
-                    <li>
-                        <TimerIcon>
-                            <MdTimer />
-                        </TimerIcon>
-                        <p>Entrega rápida e rastreada</p>
-                    </li>
-                    <li>
-                        <CoffeeIcon>
-                            <GiCoffeeCup />
-                        </CoffeeIcon>
-                        <p>O café chega fresquinho até você</p>
-                    </li>
-                </StepList>
+                <div className="coffee-main">
+                    <StepList>
+                        <li>
+                            <CartIcon>
+                                <FaShoppingCart/>
+                            </CartIcon>
+                            <p>Compra simples e segura</p>
+                        </li>
+                        <li>
+                            <PackageIcon>
+                                <BiPackage/>
+                            </PackageIcon>
+                            <p>Embalagem mantém o café intacto</p>
+                        </li>
+                        <li>
+                            <TimerIcon>
+                                <MdTimer />
+                            </TimerIcon>
+                            <p>Entrega rápida e rastreada</p>
+                        </li>
+                        <li>
+                            <CoffeeIcon>
+                                <GiCoffeeCup />
+                            </CoffeeIcon>
+                            <p>O café chega fresquinho até você</p>
+                        </li>
+                    </StepList>
+                    <div>
+                        <img src={coffee} alt="Coffee Image" />
+                    </div>
+                </div>
             </LeftContent>
             <RightContent>
                 <div>

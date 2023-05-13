@@ -50,6 +50,8 @@ export const Order = styled(Link)`
         margin: -0.5rem;
         background: var(--yellow-dark);
         border-radius: 50%;
+        font-weight: 800;
+        font-size: 0.75rem;
     }
 
     img {
@@ -68,5 +70,13 @@ export const Location = styled.div`
 
     img {
         width: 1.5rem;
+    }
+
+    @media(max-width: 320px) {
+        justify-content: center;
+
+        p {
+            display: none;
+        }
     }
 `
