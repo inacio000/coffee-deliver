@@ -5,11 +5,13 @@ import { MdTimer } from "react-icons/md";
 import { GiCoffeeCup } from "react-icons/gi";
 import coffee from "../../assets/images/coffe.png"
 
-
 export function Dashboard() {
+    
     return (
         <Container>
-            <LeftContent>
+            <LeftContent
+                data-aos="fade-right"
+            >
                 <div className="coffee-title">
                     <h1>Encontre o café perfeito para qualquer hora do dia</h1>
                     <p>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</p>
@@ -46,7 +48,9 @@ export function Dashboard() {
                     </div>
                 </div>
             </LeftContent>
-            <RightContent>
+            <RightContent
+                data-aos="fade-left"
+            >
                 <div>
                     <img src={coffee} alt="Coffee Image" />
                 </div>

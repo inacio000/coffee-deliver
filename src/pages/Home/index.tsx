@@ -1,6 +1,7 @@
 import { Dashboard } from "../../components/Dashboard";
 import { CardContainer, Cards, Main } from "./style";
 import { Card } from "../../components/Card";
+
 export function Home() {
     return (
         <Main>

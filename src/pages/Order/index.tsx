@@ -131,7 +131,7 @@ export function Order() {
                             <h3>R$ 33,20</h3>
                         </div>
                         <Link to={"/deliver"}>
-                            CONIRMAR PEDIDO
+                            CONFIRMAR PEDIDO
                         </Link>
                     </CartFooter>
                 </Cart>

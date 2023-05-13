@@ -45,7 +45,12 @@ export function Deliver() {
                 </Content>
             </ContentLeft>
             <div className="deliver">
-                <img src={illustration} alt="" />
+                <img 
+                    src={illustration} 
+                    alt="" 
+                    data-aos="fade-right"
+                    data-aos-duration="4000"
+                />
             </div>
         </Container>
     )
