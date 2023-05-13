@@ -8,9 +8,18 @@ export const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 3.375rem;
-    padding: 0 1rem;
+    padding: 2rem 1rem;
     margin: 0 auto;
-    /* border: 1rem solid red; */
+
+    h3 {
+        font-size: 32px;
+    }
+
+    @media (max-width: 560px) {
+        h3 {
+            font-size: 26px;
+        }   
+    }
 
 `
 
@@ -20,4 +29,8 @@ export const Cards = styled.div`
     row-gap: 2.5rem;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     justify-items: center;
+
+    @media (max-width: 300px) {
+        
+    }
 `

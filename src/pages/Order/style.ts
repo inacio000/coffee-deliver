@@ -12,7 +12,8 @@ export const Container = styled.div`
     padding: 10rem 1rem;
 
     h3 {
-        margin-bottom: 0.9rem;
+        margin: 0.9rem 0;
+        font-size: 1.5rem;
     }
 
     svg {
@@ -40,9 +41,17 @@ export const Container = styled.div`
     }
 
     @media (max-width: 560px) {
+        flex-direction: column;
+        gap: 5rem;
+
         h3 {
-            font-size: 22px;
+            font-size: 1.3rem;
+            padding-left: 1rem;
         }
+    }
+
+    @media (max-width: 410px) {
+        padding: 10rem 0;
     }
 `
 
@@ -52,12 +61,17 @@ export const LeftContent = styled.div`
     @media (max-width: 670px) {
         width: fit-content;
     }
+
+    @media (max-width: 410px) {
+        width: 100%;
+    }
 `;
 
 export const Content = styled.form`
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
+    
 `;
 
 export const Form = styled.form`
@@ -68,6 +82,10 @@ export const Form = styled.form`
 
     background: var(--base-card);
     border-radius: 0.375rem;
+
+    @media (max-width: 300px) {
+        padding: 2.5rem 0.875rem;
+    }
 `;
 
 export const FormBody = styled.div`
@@ -84,39 +102,17 @@ export const FormBody = styled.div`
         "NeighborhoodInput CityInput UfInput"
     ;
 
-    .cpf-input {
-        grid-area: CpfInput;
-        background: #3c4e3c;
-    }
-    .street-input {
-        grid-area: StreetInput;
-        background-color: #C47F17;
-    }
-    .number-input {
-        grid-area: NumberInput;
-        background-color: #F1E9C9;
-    }
-    .complement-input {
-        grid-area: ComplementInput;
-        background-color: #DBAC2C;
-    }
-    .neighborhood-input {
-        grid-area: NeighborhoodInput;
-        background-color: #4B2995;
-    }
-    .city-input {
-        grid-area: CityInput;
-        background-color: #EBE5F9;
-    }
-    .uf-input {
-        grid-area: UfInput;
-        background-color: #8047F8;
-    }
+    .cpf-input { grid-area: CpfInput; }
+    .street-input { grid-area: StreetInput; }
+    .number-input { grid-area: NumberInput; }
+    .complement-input { grid-area: ComplementInput; }
+    .neighborhood-input { grid-area: NeighborhoodInput; }
+    .city-input { grid-area: CityInput; }
+    .uf-input { grid-area: UfInput; }
 
     @media (max-width: 670px) {
         grid-template-columns: repeat(2, 50%);
         grid-template-rows: auto;
-        /* row-gap: 0.75rem; */
         
         grid-template-areas: 
             "NeighborhoodInput NeighborhoodInput"
@@ -187,6 +183,16 @@ export const MethodPayment = styled.div`
         grid-template-rows: auto;
         grid-template-columns: repeat(3, 1fr);
     }
+
+    @media (max-width: 560px) {
+        grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+        justify-items: center;
+
+        button {
+            width: 100%;
+            justify-content: center;
+        }
+    }
 `;
 
 export const HeaderPaymen = styled.div`
@@ -224,12 +230,35 @@ export const RightContent = styled.div`
     @media (max-width: 670px) {
         max-width: 540px;
     }
+
+    @media (max-width: 560px) {
+        width: fit-content;
+        height: fit-content;
+    }
+
+    @media (max-width: 410px) {
+        width: 100%;
+    }
 `;
 
 export const Cart = styled.div`
     padding: 2.5rem;
     border-radius: 0.357rem 2.25rem;
     background: var(--base-card);
+
+    @media (max-width: 560px) {
+        width: fit-content;
+    }
+
+    @media (max-width: 410px) {
+        width: 100%;
+
+        border-radius: 0;
+    }
+
+    @media (max-width: 300px) {
+        padding: 2.5rem 0.875rem;
+    }
 `
 
 export const CartFooter = styled.div`
@@ -250,6 +279,10 @@ export const CartFooter = styled.div`
         border-radius: 0.25rem;
         color: var(--base-white);
         text-decoration: none;
+    }
+
+    h3 {
+        padding: 0;
     }
 `;
 

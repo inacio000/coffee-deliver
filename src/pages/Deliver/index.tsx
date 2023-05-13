@@ -43,8 +43,10 @@ export function Deliver() {
                         </ul>
                     </Order>
                 </Content>
-                </ContentLeft>
-            <img src={illustration} alt="" />
+            </ContentLeft>
+            <div className="deliver">
+                <img src={illustration} alt="" />
+            </div>
         </Container>
     )
 }

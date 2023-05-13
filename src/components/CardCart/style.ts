@@ -45,4 +45,31 @@ export const Content = styled.div`
         height: 1rem;
         color: var(--purple);
     }
+
+    @media (max-width: 560px)  {
+        gap: 1.5rem;
+    }
+
+    @media (max-width: 410px) {
+        display: grid;
+
+        img { grid-area: avatarCoffee; }
+        div { grid-area: div; }
+        h4 { grid-area: price; }
+
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: auto;
+        gap: 0;
+
+        align-items: center;
+
+        grid-template-areas: 
+            "avatarCoffee price"
+            "avatarCoffee div"
+        ;
+    }
+
+    @media (max-width: 300px) {
+        
+    }
 `;

@@ -112,9 +112,9 @@ export function Order() {
             <RightContent>
                 <h3>Complete seu pedido</h3>
                 <Cart>
-                    {/* <CardCart/>
                     <CardCart/>
-                    <CardCart/> */}
+                    <CardCart/>
+                    <CardCart/>
                     <CartFooter>
                         <div>
                             <p>Total de itens</p>

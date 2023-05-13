@@ -16,6 +16,14 @@ export const CardItemn = styled.div`
         width: 120px;
         margin: -2rem 0 1rem;
     }
+
+    @media (max-width: 300px) {
+        width: 200px;
+
+        img {
+            width: 100px;
+        }
+    }
 `
 
 export const MainCard = styled.div`
@@ -65,6 +73,11 @@ export const FooterCad = styled.div`
         display: flex;
         align-items: center;
         gap: 0.5rem;
+    }
+
+    @media (max-width: 300px) {
+        flex-direction: column;
+        gap: 1rem;
     }
 
 `

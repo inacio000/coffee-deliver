@@ -1,17 +1,24 @@
 import styled from "styled-components";
-import bg from "../../assets/images/Background.png";
+import background from "../../assets/images/Background.png";
+import verticalBackground from "../../assets/images/bg-vertical.png";
 
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
-  background-image: url(${bg});
+  background-image: url(${background});
   padding: 10rem 1rem 5rem;
   
   @media(max-width: 1030px) {
     text-align: center;
     align-items: center;
     flex-direction: column;
+
+    background-image: url(${verticalBackground});
+  }
+
+  @media(max-width: 570px) {
+    padding-bottom: 2.5rem;
   }
 `;
 
@@ -39,6 +46,7 @@ export const LeftContent = styled.div`
   }
   
   @media(max-width: 570px) {
+
     .coffee-title {
       margin-bottom: 2rem;
     }
