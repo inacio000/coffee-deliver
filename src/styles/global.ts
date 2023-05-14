@@ -87,6 +87,7 @@ export const GlobalStyle = createGlobalStyle`
         cursor: pointer;
         border: none;
         background: var(--base-button);
+        transition: all 0.3s;
     }
 
     [disable] {

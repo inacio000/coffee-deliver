@@ -21,12 +21,25 @@ import {
     UfInput,
     Neighborhood,
     Cart,
-    CartFooter
+    CartFooter,
+    PaymentButton
 } from "./style";
 import { CardCart } from "../../components/CardCart";
 import { Link } from "react-router-dom";
+import { useCartCoffee } from "../../hooks/useCart";
+import { formatedPrice } from "../../util/format";
 
 export function Order() {
+    const { cart, removeCoffee } = useCartCoffee();
+
+    const cartFormated = cart.map(coffee => ({
+        ...coffee,
+        priceFormated: formatedPrice(coffee.price),
+        sutotal: formatedPrice(coffee.price * coffee.amount)
+    }))
+
+    // const total = 
+
     return (
         <Container>
             <LeftContent>
@@ -87,24 +100,21 @@ export function Order() {
                             <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
                         </HeaderPaymen>
                         <MethodPayment>
-                            <button
-                                className=""
+                            <PaymentButton
                                 type="button">
                                 <TbCreditCard />
                                 <span>Cartão de crédito</span>
-                            </button>
-                            <button
-                                className=""
+                            </PaymentButton>
+                            <PaymentButton
                                 type="button">
                                 <TbCreditCard />
                                 <span>cartão de débito</span>
-                            </button>
-                            <button
-                                className=""
+                            </PaymentButton>
+                            <PaymentButton
                                 type="button">
                                 <TbCreditCard />
                                 <span>dinheiro</span>
-                            </button>
+                            </PaymentButton>
                         </MethodPayment>
                     </Form>
                 </Content>
@@ -132,7 +142,9 @@ export function Order() {
                             <h3>R$ 33,20</h3>
                         </div>
                         <Link to={"/deliver"}>
-                            CONFIRMAR PEDIDO
+                            <button>
+                                CONFIRMAR PEDIDO
+                            </button>
                         </Link>
                     </CartFooter>
                 </Cart>

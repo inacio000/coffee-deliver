@@ -2,19 +2,39 @@
   "coffee": [
     {
       "id": 1,
-      "title": "Expresso Tradicional",
+      "avatar": "./src/assets/images/Type=Expresso.png",
+      "typeCoffee": "TRADICIONAL",
+      "name": "Expresso Tradicional",
       "description": "O tradicional café feito com água quente e grãos moídos",
-      "price": 990,
-      "qt": 2,
-      "img": "coffe.png"
+      "price": 9.90,
+      "amount": 100
     },
     {
       "id": 2,
-      "title": "Expresso Cremoso",
-      "description": "Café expresso tradicional com espuma cremosa",
-      "price": 990,
-      "qt": 2,
-      "img": "coffe.png"
+      "avatar": "./src/assets/images/Type=Expresso.png",
+      "typeCoffee": "TRADICIONAL",
+      "name": "Expresso Tradicional",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "price": 9.90,
+      "amount": 100
+    },
+    {
+      "id": 3,
+      "avatar": "./src/assets/images/Type=Expresso.png",
+      "typeCoffee": "TRADICIONAL",
+      "name": "Expresso Tradicional",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "price": 9.90,
+      "amount": 100
+    },
+    {
+      "id": 3,
+      "avatar": "./src/assets/images/Type=Expresso.png",
+      "typeCoffee": "TRADICIONAL",
+      "name": "Expresso Tradicional",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "price": 9.90,
+      "amount": 100
     }
   ],
   

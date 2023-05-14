@@ -97,6 +97,11 @@ export const FooterButtons = styled.section`
     svg {
       margin-top: 0.3rem;
       color: var(--purple);
+      transition: all 0.3s;
+
+      &:hover {
+        color: var(--purple-dark);
+      }
     }
   }
 `;
@@ -110,6 +115,11 @@ export const CartIcon = styled(Link)`
   padding: 0%.5rem;
   border-radius: 0.375rem;
   background: var(--purple-dark);
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: var(--purple);
+  }
 
   svg {
     color: var(--background);

@@ -1,8 +1,20 @@
 import styled from "styled-components";
+import { darken } from "polished"
 
 interface FormProps {
   svgColor: string;
 }
+
+interface ButtonProps {
+  isSelected: boolean;
+  selectedColor: "selected";
+  borderColorOnSelected: "borderSelected";
+}
+
+const buttonColors = {
+  selected: "#EBE5F9",
+  borderSelected: "#8047F8",
+};
 
 export const Container = styled.div`
   display: flex;
@@ -173,11 +185,14 @@ export const MethodPayment = styled.div`
     display: flex;
     align-items: center;
     gap: 0.8125rem;
-    background: var(--base-button);
     width: 11.166875rem;
     padding: 1rem;
     border: none;
     border-radius: 0.375rem;
+
+    &:hover {
+      background-color: var(--base-hover);
+    }
 
     svg {
       width: 1rem;
@@ -204,6 +219,10 @@ export const MethodPayment = styled.div`
       justify-content: center;
     }
   }
+`;
+
+export const PaymentButton = styled.button`
+  
 `;
 
 export const HeaderPaymen = styled.div`
@@ -283,14 +302,27 @@ export const CartFooter = styled.div`
   }
 
   a {
-    width: 100%;
-    text-align: center;
+    height: 2.875rem;
     background: var(--yellow);
-    padding: 0.75rem;
+    /* padding: 0.75rem; */
     border-radius: 0.25rem;
-    color: var(--base-white);
     text-decoration: none;
+    
+    button {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      border-radius: 0.25rem;
+      color: var(--base-white);
+      background: var(--yellow);
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: var(--yellow-dark);
+      }
+    }
   }
+  
 
   h3 {
     padding: 0;

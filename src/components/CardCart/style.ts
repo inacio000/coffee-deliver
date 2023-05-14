@@ -31,6 +31,10 @@ export const Content = styled.div`
         svg {
           color: var(--purple);
         }
+
+        &:hover {
+          background-color: var(--base-hover);
+        }
       }
     }
   }
