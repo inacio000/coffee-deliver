@@ -9,38 +9,38 @@ export function Home() {
             <CardContainer>
                 <h3>Nossos Cafés</h3>
                 <Cards>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
                 </Cards>
             </CardContainer>
         </Main>

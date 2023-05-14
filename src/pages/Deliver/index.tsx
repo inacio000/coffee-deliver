@@ -15,7 +15,7 @@ export function Deliver() {
                         <ul>
                             <li>
                                 <Icon className="location">
-                                    <FaMapMarkerAlt/>
+                                    <FaMapMarkerAlt />
                                 </Icon>
                                 <div>
                                     <p>Entrega em <span>Rua João Daniel Martinelli, 102</span></p>
@@ -24,7 +24,7 @@ export function Deliver() {
                             </li>
                             <li>
                                 <Icon className="timer">
-                                    <FaMapMarkerAlt/>
+                                    <FaMapMarkerAlt />
                                 </Icon>
                                 <div>
                                     <p>Previsão de entrega</p>
@@ -33,7 +33,7 @@ export function Deliver() {
                             </li>
                             <li>
                                 <Icon className="money">
-                                    <FaMapMarkerAlt/>
+                                    <FaMapMarkerAlt />
                                 </Icon>
                                 <div>
                                     <p>Pagamento na entrega</p>
@@ -45,9 +45,9 @@ export function Deliver() {
                 </Content>
             </ContentLeft>
             <div className="deliver">
-                <img 
-                    src={illustration} 
-                    alt="" 
+                <img
+                    src={illustration}
+                    alt=""
                     data-aos="fade-right"
                     data-aos-duration="4000"
                 />

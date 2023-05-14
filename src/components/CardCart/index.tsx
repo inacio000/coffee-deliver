@@ -13,11 +13,11 @@ export function CardCart() {
                 <span>
                     <FooterButtons>
                         <button>
-                            <AiOutlineMinus/>
+                            <AiOutlineMinus />
                         </button>
-                            <span>1</span>
+                        <span>1</span>
                         <button>
-                            <AiOutlinePlus/>
+                            <AiOutlinePlus />
                         </button>
                     </FooterButtons>
                     <button type="button">

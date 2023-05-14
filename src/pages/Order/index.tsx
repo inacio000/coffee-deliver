@@ -1,21 +1,22 @@
 import { BiMap } from "react-icons/bi";
-import {BsCurrencyDollar} from "react-icons/bs";
-import {TbCreditCard} from "react-icons/tb"
-import { Address, 
-    CityInput, 
-    ComplementInput, 
-    Container, 
-    Content, 
-    CpfInput, 
-    Form, 
-    FormBody, 
-    HeaderForm, 
-    HeaderPaymen, 
-    LeftContent, 
-    NavPay, 
-    NumberInput, 
-    MethodPayment, 
-    RightContent, 
+import { BsCurrencyDollar } from "react-icons/bs";
+import { TbCreditCard } from "react-icons/tb"
+import {
+    Address,
+    CityInput,
+    ComplementInput,
+    Container,
+    Content,
+    CpfInput,
+    Form,
+    FormBody,
+    HeaderForm,
+    HeaderPaymen,
+    LeftContent,
+    NavPay,
+    NumberInput,
+    MethodPayment,
+    RightContent,
     StreetInput,
     UfInput,
     Neighborhood,
@@ -34,7 +35,7 @@ export function Order() {
                     <Form>
                         <HeaderForm>
                             <Address>
-                                <BiMap/>
+                                <BiMap />
                                 <span>Endereço de Entrega</span>
                             </Address>
                             <p>Informe o endereço onde deseja receber seu pedido</p>
@@ -46,32 +47,32 @@ export function Order() {
                                 placeholder="CEP"
                             />
                             <StreetInput
-                                className="street-input" 
-                                type="text" 
+                                className="street-input"
+                                type="text"
                                 placeholder="Rua"
                             />
-                            <NumberInput 
-                                className="number-input" 
-                                type="" 
+                            <NumberInput
+                                className="number-input"
+                                type=""
                                 placeholder="Número"
                             />
-                            <ComplementInput 
-                                className="complement-input" 
+                            <ComplementInput
+                                className="complement-input"
                                 type="text"
                                 placeholder="Complemento"
                             />
-                            <Neighborhood 
-                                className="neighborhood-input" 
-                                type="text" 
+                            <Neighborhood
+                                className="neighborhood-input"
+                                type="text"
                                 placeholder="Bairro"
                             />
-                            <CityInput 
-                                className="city-input" 
-                                type="text" 
+                            <CityInput
+                                className="city-input"
+                                type="text"
                                 placeholder="Cidade"
                             />
-                            <UfInput 
-                                className="uf-input" 
+                            <UfInput
+                                className="uf-input"
                                 type="text"
                                 placeholder="UF"
                             />
@@ -80,25 +81,25 @@ export function Order() {
                     <Form>
                         <HeaderPaymen>
                             <NavPay>
-                                <BsCurrencyDollar/>
+                                <BsCurrencyDollar />
                                 <span>Pagamento</span>
                             </NavPay>
                             <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
                         </HeaderPaymen>
                         <MethodPayment>
-                            <button 
+                            <button
                                 className=""
                                 type="button">
                                 <TbCreditCard />
                                 <span>Cartão de crédito</span>
                             </button>
-                            <button 
+                            <button
                                 className=""
                                 type="button">
                                 <TbCreditCard />
                                 <span>cartão de débito</span>
                             </button>
-                            <button 
+                            <button
                                 className=""
                                 type="button">
                                 <TbCreditCard />
@@ -112,9 +113,9 @@ export function Order() {
             <RightContent>
                 <h3>Complete seu pedido</h3>
                 <Cart>
-                    <CardCart/>
-                    <CardCart/>
-                    <CardCart/>
+                    <CardCart />
+                    <CardCart />
+                    <CardCart />
                     <CartFooter>
                         <div>
                             <p>Total de itens</p>

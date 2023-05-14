@@ -8,8 +8,8 @@ export const Container = styled.div`
 
   background-image: url(${background});
   padding: 10rem 1rem 5rem;
-  
-  @media(max-width: 1030px) {
+
+  @media (max-width: 1030px) {
     text-align: center;
     align-items: center;
     flex-direction: column;
@@ -17,7 +17,7 @@ export const Container = styled.div`
     background-image: url(${verticalBackground});
   }
 
-  @media(max-width: 570px) {
+  @media (max-width: 570px) {
     padding-bottom: 2.5rem;
   }
 `;
@@ -41,12 +41,11 @@ export const LeftContent = styled.div`
     display: none;
   }
 
-  @media(max-width: 1030px) {
+  @media (max-width: 1030px) {
     margin-bottom: 2rem;
   }
-  
-  @media(max-width: 570px) {
 
+  @media (max-width: 570px) {
     .coffee-title {
       margin-bottom: 2rem;
     }
@@ -62,7 +61,7 @@ export const LeftContent = styled.div`
     }
   }
 
-  @media(max-width: 500px) {
+  @media (max-width: 500px) {
     .coffee-main {
       flex-direction: column;
       gap: 1rem;
@@ -74,11 +73,10 @@ export const LeftContent = styled.div`
       }
     }
   }
-  
 `;
 
 export const RightContent = styled.div`
-  @media(max-width: 570px) {
+  @media (max-width: 570px) {
     img {
       display: none;
       width: 400px;
@@ -113,14 +111,13 @@ export const StepList = styled.ul`
     color: var(--icons-color);
   }
 
-  @media(max-width: 570px) {
+  @media (max-width: 570px) {
     display: flex;
     flex-direction: column;
   }
 
-  @media(max-width: 320px) {
-  row-gap: 1.5rem;
-    
+  @media (max-width: 320px) {
+    row-gap: 1.5rem;
   }
 `;
 

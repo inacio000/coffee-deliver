@@ -6,7 +6,7 @@ import { GiCoffeeCup } from "react-icons/gi";
 import coffee from "../../assets/images/coffe.png"
 
 export function Dashboard() {
-    
+
     return (
         <Container>
             <LeftContent
@@ -20,13 +20,13 @@ export function Dashboard() {
                     <StepList>
                         <li>
                             <CartIcon>
-                                <FaShoppingCart/>
+                                <FaShoppingCart />
                             </CartIcon>
                             <p>Compra simples e segura</p>
                         </li>
                         <li>
                             <PackageIcon>
-                                <BiPackage/>
+                                <BiPackage />
                             </PackageIcon>
                             <p>Embalagem mantém o café intacto</p>
                         </li>

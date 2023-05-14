@@ -1,16 +1,22 @@
 import { CardItemn, FooterCad, MainCard, CartIcon, FooterButtons } from "./style";
-import {AiOutlinePlus} from "react-icons/ai";
-import {AiOutlineMinus} from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineMinus } from "react-icons/ai";
 import coffeeImage from "../../assets/images/Type=Expresso.png"
 import { FaShoppingCart } from "react-icons/fa";
 import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 export function Card() {
+    useEffect(() => {
+        fetch('http://localhost:3000/coffees')
+            .then(response => response.json())
+            .then(data => console.log(data));
+    }, [])
 
     return (
         <CardItemn
             data-aos="fade-up"
-            
+
         >
             <img src={coffeeImage} alt="" />
 
@@ -22,21 +28,21 @@ export function Card() {
 
             <FooterCad>
                 <p>
-                    <span>R$ </span> 
+                    <span>R$ </span>
                     <strong>9,90</strong>
                 </p>
                 <div>
                     <FooterButtons>
                         <button>
-                            <AiOutlineMinus/>
+                            <AiOutlineMinus />
                         </button>
-                            <span>1</span>   
+                        <span>1</span>
                         <button>
-                            <AiOutlinePlus/>
+                            <AiOutlinePlus />
                         </button>
                     </FooterButtons>
                     <CartIcon to={"/order"}>
-                        <FaShoppingCart/>
+                        <FaShoppingCart />
                     </CartIcon>
                 </div>
             </FooterCad>

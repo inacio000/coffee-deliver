@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     ::-webkit-scrollbar {
@@ -93,4 +93,4 @@ export const GlobalStyle = createGlobalStyle`
         opacity: 0.6;
         cursor: not-allowed;
     }
-`
+`;
