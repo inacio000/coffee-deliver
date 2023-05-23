@@ -42,7 +42,7 @@ export function Card() {
                         key={coffee.id}
                         data-aos="fade-up"
                     >
-                        <img src={coffeeImage} alt={coffee.typeCoffee} />
+                        <img src={coffee.avatar} alt={coffee.typeCoffee} />
 
                          <MainCard>
                              <h6><span>{coffee.typeCoffee}</span></h6>

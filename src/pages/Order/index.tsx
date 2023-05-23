@@ -165,7 +165,7 @@ const Order = (): JSX.Element => {
                         {
                             cartFormatted.map(coffee => (
                                 <ContentCardCart key={coffee.id}>
-                                    <img src={coffeeImage} alt="Coffee image" />
+                                    <img src={coffee.avatar} alt="Coffee image" />
                                     <div>
                                         <p>{coffee.typeCoffee}</p>
                                         <span>
