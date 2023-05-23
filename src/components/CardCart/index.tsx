@@ -1,32 +1,63 @@
-import { Content } from "./style";
+import { ContentCardCart } from "./style";
 import coffeeImage from "../../assets/images/Type=Expresso.png"
 import { FooterButtons } from "../Card/style";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { useCartCoffee } from "../../hooks/useCart";
 
 export function CardCart() {
+    const { cart } = useCartCoffee();
+
     return (
-        <Content>
-            <img src={coffeeImage} alt="Coffee image" />
-            <div>
-                <p>Expresso Tradicional</p>
-                <span>
-                    <FooterButtons>
-                        <button>
-                            <AiOutlineMinus />
-                        </button>
-                        <span>1</span>
-                        <button>
-                            <AiOutlinePlus />
-                        </button>
-                    </FooterButtons>
-                    <button type="button">
-                        <RiDeleteBin6Line />
-                        <p>REMOVER</p>
-                    </button>
-                </span>
-            </div>
-            <h4>R$ 9,90</h4>
-        </Content>
+        <>
+            {
+                cart.map(coffe => (
+                    <ContentCardCart>
+                        <img src={coffeeImage} alt="Coffee image" />
+                        <div>
+                            <p>Expresso Tradicional</p>
+                            <span>
+                                <FooterButtons>
+                                    <button>
+                                        <AiOutlineMinus />
+                                    </button>
+                                    <span>1</span>
+                                    <button>
+                                        <AiOutlinePlus />
+                                    </button>
+                                </FooterButtons>
+                                <button type="button">
+                                    <RiDeleteBin6Line />
+                                    <p>REMOVER</p>
+                                </button>
+                            </span>
+                        </div>
+                        <h4>R$ 9,90</h4>
+                    </ContentCardCart>
+                ))
+            }
+        </>
+        // <ContentCardCart>
+        //     <img src={coffeeImage} alt="Coffee image" />
+        //     <div>
+        //         <p>Expresso Tradicional</p>
+        //         <span>
+        //             <FooterButtons>
+        //                 <button>
+        //                     <AiOutlineMinus />
+        //                 </button>
+        //                 <span>1</span>
+        //                 <button>
+        //                     <AiOutlinePlus />
+        //                 </button>
+        //             </FooterButtons>
+        //             <button type="button">
+        //                 <RiDeleteBin6Line />
+        //                 <p>REMOVER</p>
+        //             </button>
+        //         </span>
+        //     </div>
+        //     <h4>R$ 9,90</h4>
+        // </ContentCardCart>
     )
 }

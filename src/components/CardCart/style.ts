@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Content = styled.div`
+export const ContentCardCart = styled.div`
   display: flex;
   justify-content: space-between;
   padding-bottom: 2.09375rem;

@@ -1,43 +1,80 @@
 {
-  "coffee": [
+  "stockCoffee": [
     {
       "id": 1,
-      "avatar": "./src/assets/images/Type=Expresso.png",
-      "typeCoffee": "TRADICIONAL",
-      "name": "Expresso Tradicional",
-      "description": "O tradicional café feito com água quente e grãos moídos",
-      "price": 9.90,
       "amount": 100
     },
     {
       "id": 2,
-      "avatar": "./src/assets/images/Type=Expresso.png",
-      "typeCoffee": "TRADICIONAL",
-      "name": "Expresso Tradicional",
-      "description": "O tradicional café feito com água quente e grãos moídos",
-      "price": 9.90,
       "amount": 100
     },
     {
       "id": 3,
-      "avatar": "./src/assets/images/Type=Expresso.png",
-      "typeCoffee": "TRADICIONAL",
-      "name": "Expresso Tradicional",
-      "description": "O tradicional café feito com água quente e grãos moídos",
-      "price": 9.90,
       "amount": 100
     },
     {
-      "id": 3,
-      "avatar": "./src/assets/images/Type=Expresso.png",
-      "typeCoffee": "TRADICIONAL",
-      "name": "Expresso Tradicional",
-      "description": "O tradicional café feito com água quente e grãos moídos",
-      "price": 9.90,
+      "id": 4,
+      "amount": 100
+    },
+    {
+      "id": 5,
+      "amount": 100
+    },
+    {
+      "id": 6,
       "amount": 100
     }
   ],
-  
+  "coffee": [
+    {
+      "id": 1,
+      "avatar": "../../assets/images/Type=Expresso.png",
+      "typeCoffee": "TRADICIONAL",
+      "name": "Expresso Tradicional",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "price": 9.90
+    },
+    {
+      "id": 2,
+      "avatar": "Type-Arabe.png",
+      "typeCoffee": "TRADICIONAL",
+      "name": "Expresso Tradicional",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "price": 9.90
+    },
+    {
+      "id": 3,
+      "avatar": "./src/assets/images/Type-Arabe.png",
+      "typeCoffee": "TRADICIONAL",
+      "name": "Expresso Tradicional",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "price": 9.90
+    },
+    {
+      "id": 4,
+      "avatar": "./src/assets/images/Type-Arabe.png",
+      "typeCoffee": "TRADICIONAL",
+      "name": "Expresso Tradicional",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "price": 9.90
+    },
+    {
+      "id": 5,
+      "avatar": "./src/assets/images/Type-Arabe.png",
+      "typeCoffee": "TRADICIONAL",
+      "name": "Expresso Tradicional",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "price": 9.90
+    },
+    {
+      "id": 6,
+      "avatar": "./src/assets/images/Type-Arabe.png",
+      "typeCoffee": "TRADICIONAL",
+      "name": "Expresso Tradicional",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "price": 9.90
+    }
+  ],
   "order": [
     {
       "id": 1,

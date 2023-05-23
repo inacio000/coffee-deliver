@@ -22,23 +22,61 @@ import {
     Neighborhood,
     Cart,
     CartFooter,
-    PaymentButton
+    PaymentButton,
+    ContentCardCart
 } from "./style";
-import { CardCart } from "../../components/CardCart";
+import coffeeImage from "../../assets/images/Type=Expresso.png";
+
 import { Link } from "react-router-dom";
 import { useCartCoffee } from "../../hooks/useCart";
-import { formatedPrice } from "../../util/format";
+import { formattedPrice } from "../../util/format";
+import { Coffee } from "../../types";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { FooterButtons } from "../../components/Card/style";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
-export function Order() {
-    const { cart, removeCoffee } = useCartCoffee();
+const Order = (): JSX.Element => {
+    const { cart, removeCoffee, updateCoffeeAmount } = useCartCoffee();
 
-    const cartFormated = cart.map(coffee => ({
+    const cartFormatted = cart.map(coffee => ({
         ...coffee,
-        priceFormated: formatedPrice(coffee.price),
-        sutotal: formatedPrice(coffee.price * coffee.amount)
+        priceFormatted: formattedPrice(coffee.price),
+        subTotal: formattedPrice(coffee.price * coffee.amount),
+        entrega: formattedPrice((coffee.price * coffee.amount) * 0.1)
     }))
 
-    // const total = 
+    const subTotal = formattedPrice(
+        cart.reduce((sumSubTotal, coffee) => {
+
+            return sumSubTotal + (coffee.price * coffee.amount);
+        }, 0)
+    )
+
+    const entrega = formattedPrice(
+        cart.reduce((calculoEntrega, coffee) => {
+
+            return calculoEntrega + ((coffee.price * coffee.amount) * 0.1);
+        }, 0)
+    )
+
+    const total = formattedPrice(
+        cart.reduce((sumTotal, coffee) => {
+
+            return sumTotal + coffee.price * coffee.amount
+        }, 0)
+    )
+
+    function handleCoffeeIncrement(coffee: Coffee) {
+        updateCoffeeAmount({ coffeeId: coffee.id, amount: coffee.amount + 1})
+    }
+
+    function handleCoffeeDecrement(coffee: Coffee) {
+        updateCoffeeAmount({ coffeeId: coffee.id, amount: coffee.amount - 1})
+    }
+
+    function handleCoffeeRemove(coffeeId: number) {
+       removeCoffee(coffeeId)
+    }
 
     return (
         <Container>
@@ -123,23 +161,56 @@ export function Order() {
             <RightContent>
                 <h3>Complete seu pedido</h3>
                 <Cart>
-                    <CardCart />
-                    <CardCart />
-                    <CardCart />
                     <CartFooter>
+                        {
+                            cartFormatted.map(coffee => (
+                                <ContentCardCart key={coffee.id}>
+                                    <img src={coffeeImage} alt="Coffee image" />
+                                    <div>
+                                        <p>{coffee.typeCoffee}</p>
+                                        <span>
+                                            <FooterButtons>
+                                                <button
+                                                    onClick={() => handleCoffeeDecrement(coffee)}
+                                                    disabled={coffee.amount <= 1}
+                                                    type="button"
+                                                >
+                                                    <AiOutlineMinus />
+                                                </button>
+                                                
+                                                <span>{coffee.amount}</span>
+                                                <button
+                                                    onClick={() => handleCoffeeIncrement(coffee)}
+                                                    type="button"
+                                                >
+                                                    <AiOutlinePlus />
+                                                </button>
+                                            </FooterButtons>
+                                            <button 
+                                                onClick={() => handleCoffeeRemove(coffee.id)}
+                                                type="button">
+                                                <RiDeleteBin6Line />
+                                                <p>REMOVER</p>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <h4>{formattedPrice(coffee.price)}</h4>
+                                </ContentCardCart>
+                            ))
+                        }
                         <div>
                             <p>Total de itens</p>
-                            <p>R$ 29,70</p>
+                            <p>{subTotal}</p>
                         </div>
 
                         <div>
                             <p>Entrega</p>
-                            <p>R$ 3,50</p>
+                            <p>{entrega}</p>
                         </div>
 
                         <div>
                             <h3>Total</h3>
-                            <h3>R$ 33,20</h3>
+                            <h3>{total}</h3>
                         </div>
                         <Link to={"/deliver"}>
                             <button>
@@ -152,3 +223,5 @@ export function Order() {
         </Container>
     )
 }
+
+export default Order;

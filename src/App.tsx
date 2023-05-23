@@ -5,6 +5,7 @@ import { GlobalStyle } from "./styles/global";
 import { useEffect } from "react";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { CartProvider } from "./hooks/useCart";
 
 export function App() {
   useEffect(() => {
@@ -13,9 +14,11 @@ export function App() {
 
   return (
     <BrowserRouter>
-      <GlobalStyle />
-      <Header />
-      <Routes />
+      <CartProvider>
+        <GlobalStyle />
+        <Header />
+        <Routes />
+      </CartProvider>
     </BrowserRouter>
   );
 }

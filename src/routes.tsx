@@ -1,6 +1,6 @@
 import { Routes as Switch, Route, Navigate } from "react-router-dom";
 import { Home } from "./pages/Home";
-import { Order } from "./pages/Order";
+import Order from "./pages/Order";
 import { Deliver } from "./pages/Deliver";
 
 export function Routes() {

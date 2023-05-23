@@ -1,51 +1,81 @@
 import { CardItemn, FooterCad, MainCard, CartIcon, FooterButtons } from "./style";
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineMinus } from "react-icons/ai";
-import coffeeImage from "../../assets/images/Type=Expresso.png"
+import coffeeImage from "../../assets/images/Type=Expresso.png";
 import { FaShoppingCart } from "react-icons/fa";
-import 'aos/dist/aos.css'
-import { useEffect } from "react";
+import 'aos/dist/aos.css';
+import { useCartCoffee } from "../../hooks/useCart";
+import { formattedPrice } from "../../util/format";
+
+interface CartItemsCoffeeAmount {
+    [key: number]: number;
+}
 
 export function Card() {
-    useEffect(() => {
-        fetch('http://localhost:3000/coffees')
-            .then(response => response.json())
-            .then(data => console.log(data));
-    }, [])
+    const { addCoffee, removeCoffee, cart } = useCartCoffee();
+    const cartCoffeeAmount = cart.reduce((sumAmount, coffee) => {
+        const newSumCoffeeAmount = { ...sumAmount }
+        newSumCoffeeAmount[coffee.id] = coffee.amount
+
+        return newSumCoffeeAmount;
+    }, {} as CartItemsCoffeeAmount)
+
+    // const cartFormatted = cart.map(coffee => ({
+    //     ...coffee,
+    //     priceFormatted: formattedPrice(coffee.price),
+    //     subTotal: formattedPrice(coffee.price * coffee.amount)
+    // }))
+
+    function handleAddCoffee(id: number) {
+        addCoffee(id)
+    }
+
+    function handleRemoveCoffee(id: number) {
+        removeCoffee(id);
+    }
 
     return (
-        <CardItemn
-            data-aos="fade-up"
+        <>
+            {
+                cart.map(coffee => (
+                    <CardItemn
+                        key={coffee.id}
+                        data-aos="fade-up"
+                    >
+                        <img src={coffeeImage} alt={coffee.typeCoffee} />
 
-        >
-            <img src={coffeeImage} alt="" />
+                         <MainCard>
+                             <h6><span>{coffee.typeCoffee}</span></h6>
+                             <h4>{coffee.name}</h4>
+                             <p>{coffee.description}</p>
+                         </MainCard>
 
-            <MainCard>
-                <h6><span>TRADICIONAL</span></h6>
-                <h4>Expresso Tradicional</h4>
-                <p>O tradicional café feito com água quente e grãos moídos</p>
-            </MainCard>
-
-            <FooterCad>
-                <p>
-                    <span>R$ </span>
-                    <strong>9,90</strong>
-                </p>
-                <div>
-                    <FooterButtons>
-                        <button>
-                            <AiOutlineMinus />
-                        </button>
-                        <span>1</span>
-                        <button>
-                            <AiOutlinePlus />
-                        </button>
-                    </FooterButtons>
-                    <CartIcon to={"/order"}>
-                        <FaShoppingCart />
-                    </CartIcon>
-                </div>
-            </FooterCad>
-        </CardItemn>
+                         <FooterCad>
+                             <p>
+                                 <strong>{formattedPrice(coffee.price)}</strong>
+                             </p>
+                             <div>
+                                 <FooterButtons>
+                                     <button
+                                        onClick={() => handleRemoveCoffee(coffee.id)}
+                                     >
+                                         <AiOutlineMinus />
+                                     </button>
+                                     <span>{cartCoffeeAmount[coffee.id] || 0}</span>
+                                     <button
+                                        onClick={() => handleAddCoffee(coffee.id)}
+                                     >
+                                         <AiOutlinePlus />
+                                     </button>
+                                 </FooterButtons>
+                                 <CartIcon to={"/order"}>
+                                     <FaShoppingCart />
+                                 </CartIcon>
+                             </div>
+                         </FooterCad>
+                    </CardItemn>
+                ))
+            }
+        </>
     )
 }

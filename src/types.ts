@@ -7,3 +7,8 @@ export interface Coffee {
     price: number;
     amount: number;
 }
+
+export interface StockCoffee {
+    id: number;
+    amount: number;
+}
