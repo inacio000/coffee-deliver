@@ -1,81 +1,86 @@
-import { CardItemn, FooterCad, MainCard, CartIcon, FooterButtons } from "./style";
+import { CardItemn, FooterCad, MainCard, CartIcon, FooterButtons, Price } from "./style";
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineMinus } from "react-icons/ai";
-import coffeeImage from "../../assets/images/Type=Expresso.png";
 import { FaShoppingCart } from "react-icons/fa";
 import 'aos/dist/aos.css';
+import { ChangeEvent, useState } from "react";
 import { useCartCoffee } from "../../hooks/useCart";
-import { formattedPrice } from "../../util/format";
 
-interface CartItemsCoffeeAmount {
-    [key: number]: number;
+export interface CoffeeCardProps {
+    coffee: {
+        id: number;
+        avatar: string;
+        typeCoffee: string[];
+        name: string;
+        description: string;
+        priceFormatted: string;
+        amount: number;
+    }
 }
 
-export function Card() {
-    const { addCoffee, removeCoffee, cart } = useCartCoffee();
-    const cartCoffeeAmount = cart.reduce((sumAmount, coffee) => {
-        const newSumCoffeeAmount = { ...sumAmount }
-        newSumCoffeeAmount[coffee.id] = coffee.amount
+export function Card({ coffee }: CoffeeCardProps) {
+    const { addCoffee } = useCartCoffee();
+    const [amountCoffee, setAmountCoffee] = useState(0);
 
-        return newSumCoffeeAmount;
-    }, {} as CartItemsCoffeeAmount)
-
-    // const cartFormatted = cart.map(coffee => ({
-    //     ...coffee,
-    //     priceFormatted: formattedPrice(coffee.price),
-    //     subTotal: formattedPrice(coffee.price * coffee.amount)
-    // }))
-
-    function handleAddCoffee(id: number) {
-        addCoffee(id)
+    function handleDecrement() {
+        amountCoffee - 1 >= 0 && setAmountCoffee(amountCoffee - 1);
     }
 
-    function handleRemoveCoffee(id: number) {
-        removeCoffee(id);
+    function handleIncrement() {
+        amountCoffee + 1 <= 10 && setAmountCoffee(amountCoffee + 1);
+    }
+
+    function handleChangeAmount(event: ChangeEvent<HTMLInputElement>) {
+        if (event.target.valueAsNumber > 0 && event.target.valueAsNumber <= 10) {
+            setAmountCoffee(event.target.valueAsNumber)
+        }
     }
 
     return (
-        <>
-            {
-                cart.map(coffee => (
-                    <CardItemn
-                        key={coffee.id}
-                        data-aos="fade-up"
+        <CardItemn
+            key={coffee.id}
+            data-aos="fade-up"
+        >
+            <img src={coffee.avatar} alt={coffee.name} />
+
+            <MainCard>
+                <h6><span>{coffee.typeCoffee}</span></h6>
+                <h4>{coffee.name}</h4>
+                <p>{coffee.description}</p>
+            </MainCard>
+
+            <FooterCad>
+                <Price>
+                    <span>R$</span><strong>{coffee.priceFormatted}</strong>
+                </Price>
+                <div>
+                    <FooterButtons>
+                        <button
+                            onClick={handleDecrement}
+                        >
+                            <AiOutlineMinus />
+                        </button>
+                        <input 
+                            type="text"
+                            min={0}
+                            max={10}
+                            onChange={handleChangeAmount}
+                            value={amountCoffee}
+                        />
+                        <button
+                            onClick={handleIncrement}
+                        >
+                            <AiOutlinePlus />
+                        </button>
+                    </FooterButtons>
+                    <CartIcon
+                        type="button"
+                        onClick={() => addCoffee(coffee.id, amountCoffee)}
                     >
-                        <img src={coffee.avatar} alt={coffee.typeCoffee} />
-
-                         <MainCard>
-                             <h6><span>{coffee.typeCoffee}</span></h6>
-                             <h4>{coffee.name}</h4>
-                             <p>{coffee.description}</p>
-                         </MainCard>
-
-                         <FooterCad>
-                             <p>
-                                 <strong>{formattedPrice(coffee.price)}</strong>
-                             </p>
-                             <div>
-                                 <FooterButtons>
-                                     <button
-                                        onClick={() => handleRemoveCoffee(coffee.id)}
-                                     >
-                                         <AiOutlineMinus />
-                                     </button>
-                                     <span>{cartCoffeeAmount[coffee.id] || 0}</span>
-                                     <button
-                                        onClick={() => handleAddCoffee(coffee.id)}
-                                     >
-                                         <AiOutlinePlus />
-                                     </button>
-                                 </FooterButtons>
-                                 <CartIcon to={"/order"}>
-                                     <FaShoppingCart />
-                                 </CartIcon>
-                             </div>
-                         </FooterCad>
-                    </CardItemn>
-                ))
-            }
-        </>
+                        <FaShoppingCart />
+                    </CartIcon>
+                </div>
+            </FooterCad>
+        </CardItemn>            
     )
 }

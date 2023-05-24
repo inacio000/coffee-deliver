@@ -83,6 +83,27 @@ export const FooterCad = styled.div`
   }
 `;
 
+
+export const Price = styled.div`
+  line-height: 1.1255rem;
+  color: var(--base-text);
+  white-space: nowrap;
+
+  span {
+    display: flex;
+    align-self: flex-end;
+    font-size: 0.7rem;
+  }
+
+  strong {
+    display: flex;
+    align-self: flex-end;
+    font-weight: 800;
+    font-size: 1.4rem;
+    line-height: 1.31rem;
+  }
+`
+
 export const FooterButtons = styled.section`
   width: 72px;
   height: 38px;
@@ -104,9 +125,27 @@ export const FooterButtons = styled.section`
       }
     }
   }
+
+  input {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--base-title);
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    appearance: textfield;
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
 `;
 
-export const CartIcon = styled(Link)`
+export const CartIcon = styled.button`
   width: 38px;
   height: 38px;
   display: flex;

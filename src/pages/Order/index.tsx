@@ -25,7 +25,6 @@ import {
     PaymentButton,
     ContentCardCart
 } from "./style";
-import coffeeImage from "../../assets/images/Type=Expresso.png";
 
 import { Link } from "react-router-dom";
 import { useCartCoffee } from "../../hooks/useCart";
@@ -67,15 +66,15 @@ const Order = (): JSX.Element => {
     )
 
     function handleCoffeeIncrement(coffee: Coffee) {
-        updateCoffeeAmount({ coffeeId: coffee.id, amount: coffee.amount + 1})
+        updateCoffeeAmount({ coffeeId: coffee.id, amount: coffee.amount + 1 })
     }
 
     function handleCoffeeDecrement(coffee: Coffee) {
-        updateCoffeeAmount({ coffeeId: coffee.id, amount: coffee.amount - 1})
+        updateCoffeeAmount({ coffeeId: coffee.id, amount: coffee.amount - 1 })
     }
 
     function handleCoffeeRemove(coffeeId: number) {
-       removeCoffee(coffeeId)
+        removeCoffee(coffeeId)
     }
 
     return (
@@ -177,7 +176,7 @@ const Order = (): JSX.Element => {
                                                 >
                                                     <AiOutlineMinus />
                                                 </button>
-                                                
+
                                                 <span>{coffee.amount}</span>
                                                 <button
                                                     onClick={() => handleCoffeeIncrement(coffee)}
@@ -186,7 +185,7 @@ const Order = (): JSX.Element => {
                                                     <AiOutlinePlus />
                                                 </button>
                                             </FooterButtons>
-                                            <button 
+                                            <button
                                                 onClick={() => handleCoffeeRemove(coffee.id)}
                                                 type="button">
                                                 <RiDeleteBin6Line />

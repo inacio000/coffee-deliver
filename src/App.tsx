@@ -5,7 +5,7 @@ import { GlobalStyle } from "./styles/global";
 import { useEffect } from "react";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import { CartProvider } from "./hooks/useCart";
+import { CartProvider } from "./context/CartContext";
 
 export function App() {
   useEffect(() => {

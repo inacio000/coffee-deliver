@@ -22,7 +22,7 @@ export function Header() {
                     </Location>
                     <Order to={"/order"}>
                         <span>
-                            {cartSize}
+                            {cart ? cartSize : '0'}
                         </span>
                         <img src={cartImg} alt="" />
                     </Order>
