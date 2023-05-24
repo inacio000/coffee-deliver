@@ -341,6 +341,11 @@ export const ContentCardCart = styled.div`
     flex-direction: column;
     gap: 0.5rem;
 
+    &:first-child() {
+        color: var(--base-subtitle);
+        border: 1px solid red;
+      }
+
     span {
       display: flex;
       justify-content: space-between;

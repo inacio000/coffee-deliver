@@ -33,9 +33,37 @@ import { Coffee } from "../../types";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { FooterButtons } from "../../components/Card/style";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { useFormContext } from "react-hook-form";
+import { getAddressByCEP } from "cep-address-finder";
+import { InputMask } from "react-input-mask";
+import { toast } from "react-toastify";
 
 const Order = (): JSX.Element => {
     const { cart, removeCoffee, updateCoffeeAmount } = useCartCoffee();
+    const {register, formState, setValue, getValues, setFocus } = useFormContext();
+
+    const { errors } = formState;
+
+    const handleAddressAutocomplet = async() => {
+        const cepInput = getValues('cep');
+
+        if (cepInput.length >= 8) {
+            try {
+                const address = await getAddressByCEP(cepInput);
+
+                setValue('street', address.street);
+                setValue('complement',address.complement);
+                setValue('district', address.neighborhood);
+                setValue('city', address.city);
+                setValue('uf', address.state);
+            } catch (err) {
+                toast.error(`${err}`);
+            }
+        } else {
+            toast.error('CEP deve conter 8 números');
+            setFocus('cep');
+        }
+    }
 
     const cartFormatted = cart.map(coffee => ({
         ...coffee,
@@ -59,9 +87,9 @@ const Order = (): JSX.Element => {
     )
 
     const total = formattedPrice(
-        cart.reduce((sumTotal, coffee) => {
+        cart.reduce((sumTotal, coffee, entrega) => {
 
-            return sumTotal + coffee.price * coffee.amount
+            return sumTotal + coffee.price * coffee.amount + entrega
         }, 0)
     )
 
@@ -95,6 +123,9 @@ const Order = (): JSX.Element => {
                                 className="cpf-input"
                                 type="text"
                                 placeholder="CEP"
+                                as={InputMask}
+                                mask="99.999-999"
+
                             />
                             <StreetInput
                                 className="street-input"
@@ -193,23 +224,23 @@ const Order = (): JSX.Element => {
                                             </button>
                                         </span>
                                     </div>
-                                    <h4>{formattedPrice(coffee.price)}</h4>
+                                    <h4>R$ {formattedPrice(coffee.price)}</h4>
                                 </ContentCardCart>
                             ))
                         }
                         <div>
                             <p>Total de itens</p>
-                            <p>{subTotal}</p>
+                            <p>R$ {subTotal}</p>
                         </div>
 
                         <div>
                             <p>Entrega</p>
-                            <p>{entrega}</p>
+                            <p>R$ {entrega}</p>
                         </div>
 
                         <div>
                             <h3>Total</h3>
-                            <h3>{total}</h3>
+                            <h3>R$ {total}</h3>
                         </div>
                         <Link to={"/deliver"}>
                             <button>

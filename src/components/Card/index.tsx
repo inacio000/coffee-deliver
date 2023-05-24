@@ -20,7 +20,7 @@ export interface CoffeeCardProps {
 
 export function Card({ coffee }: CoffeeCardProps) {
     const { addCoffee } = useCartCoffee();
-    const [amountCoffee, setAmountCoffee] = useState(0);
+    const [amountCoffee, setAmountCoffee] = useState(1);
 
     function handleDecrement() {
         amountCoffee - 1 >= 0 && setAmountCoffee(amountCoffee - 1);
