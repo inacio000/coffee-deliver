@@ -115,6 +115,14 @@ export const FooterButtons = styled.section`
   gap: 0.5rem;
 
   button {
+    &:disabled > svg {
+      cursor: not-allowed;
+      opacity: 0.3;
+    }
+    
+    &:not(:disabled):hover {
+      background-color: var(--base-hover);
+    }
     svg {
       margin-top: 0.3rem;
       color: var(--purple);

@@ -1,21 +1,11 @@
 import styled from "styled-components";
 
-// interface FormProps {
-//   svgColor: string;
-// }
-
-// interface ButtonProps {
-//   isSelected: boolean;
-//   selectedColor: "selected";
-//   borderColorOnSelected: "borderSelected";
-// }
-
-// const buttonColors = {
-//   selected: "#EBE5F9",
-//   borderSelected: "#8047F8",
-// };
+interface ButtonProps {
+  isActive: boolean;
+}
 
 export const Container = styled.div`
+  max-width: 1440px;
   display: flex;
   justify-content: space-between;
 
@@ -111,25 +101,25 @@ export const FormBody = styled.div`
     "NumberInput ComplementInput ComplementInput"
     "NeighborhoodInput CityInput UfInput";
 
-  .cpf-input {
+  #cpf-input {
     grid-area: CpfInput;
   }
-  .street-input {
+  #street-input {
     grid-area: StreetInput;
   }
-  .number-input {
+  #number-input {
     grid-area: NumberInput;
   }
-  .complement-input {
+  #complement-input {
     grid-area: ComplementInput;
   }
-  .neighborhood-input {
+  #neighborhood-input {
     grid-area: NeighborhoodInput;
   }
-  .city-input {
+  #city-input {
     grid-area: CityInput;
   }
-  .uf-input {
+  #uf-input {
     grid-area: UfInput;
   }
 
@@ -181,23 +171,7 @@ export const MethodPayment = styled.div`
   justify-content: space-between;
 
   button {
-    display: flex;
-    align-items: center;
-    gap: 0.8125rem;
-    width: 11.166875rem;
-    padding: 1rem;
-    border: none;
-    border-radius: 0.375rem;
-
-    &:hover {
-      background-color: var(--base-hover);
-    }
-
-    svg {
-      width: 1rem;
-      height: 1rem;
-      color: var(--purple);
-    }
+   
   }
 
   @media (max-width: 670px) {
@@ -220,8 +194,25 @@ export const MethodPayment = styled.div`
   }
 `;
 
-export const PaymentButton = styled.button`
-  
+export const PaymentButton = styled.button<ButtonProps>`
+  display: flex;
+  align-items: center;
+  gap: 0.8125rem;
+  width: 11.166875rem;
+  padding: 1rem;
+  border: 1px solid ${(props) => props.isActive ? '#8047F8' : 'none'};
+  border-radius: 0.375rem;
+  background: ${(props) => props.isActive ? '#EBE5F9' : '#E6E5E5'};
+
+  &:hover {
+    background-color: var(--base-hover);
+  }
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    color: var(--purple);
+  }
 `;
 
 export const HeaderPaymen = styled.div`
@@ -300,28 +291,25 @@ export const CartFooter = styled.div`
     justify-content: space-between;
   }
 
-  a {
+  .submit-btn {
     height: 2.875rem;
     background: var(--yellow);
-    /* padding: 0.75rem; */
     border-radius: 0.25rem;
-    text-decoration: none;
-    
-    button {
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      border-radius: 0.25rem;
-      color: var(--base-white);
-      background: var(--yellow);
-      transition: all 0.3s;
+    text-align: center;
+    border-radius: 0.25rem;
+    color: var(--base-white);
+    background: var(--yellow);
+    transition: all 0.3s;
 
-      &:hover {
-        background-color: var(--yellow-dark);
-      }
+    &[type=submit]:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
     }
-  }
-  
+
+    &:not(:disabled):hover {
+      background-color: var(--yellow-dark);
+    }
+  }  
 
   h3 {
     padding: 0;
@@ -362,11 +350,16 @@ export const ContentCardCart = styled.div`
         padding: 0.5rem;
         border-radius: 0.375rem;
 
+        &:disabled > svg {
+          cursor: not-allowed;
+          opacity: 0.3;
+        }
+
         svg {
           color: var(--purple);
         }
 
-        &:hover {
+        &:not(:disabled):hover {
           background-color: var(--base-hover);
         }
       }
@@ -414,6 +407,12 @@ export const ContentCardCart = styled.div`
     grid-area: price;
   }
 `;
+
+export const Opcional = styled.div`
+  position: relative;
+  display: flex;
+  
+`
 
 // Inputs
 export const CpfInput = styled.input`

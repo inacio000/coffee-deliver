@@ -8,7 +8,7 @@ export function Routes() {
         <Switch>
             <Route path="/" element={<Home />} />
             <Route path="/order" element={<Order />} />
-            <Route path="/deliver" element={<Deliver />} />
+            <Route path="order/deliver" element={<Deliver />} />
 
             <Route path="*" element={<Navigate to="/home" />} />
         </Switch>

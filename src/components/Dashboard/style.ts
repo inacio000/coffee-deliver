@@ -3,23 +3,34 @@ import background from "../../assets/images/Background.png";
 import verticalBackground from "../../assets/images/bg-vertical.png";
 
 export const Container = styled.div`
+  width: 100%;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin-top: 10rem;
 
-  background-image: url(${background});
-  padding: 10rem 1rem 5rem;
 
-  @media (max-width: 1030px) {
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
+  background: url(${background}) no-repeat top center/cover;
 
-    background-image: url(${verticalBackground});
-  }
+`;
 
-  @media (max-width: 570px) {
-    padding-bottom: 2.5rem;
-  }
+export const Content = styled.div`
+    width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 1rem 5rem;
+
+    @media (max-width: 1030px) {
+      text-align: center;
+      align-items: center;
+      flex-direction: column;
+
+      background: url(${verticalBackground}) no-repeat top center/cover;
+    }
+
+    @media (max-width: 570px) {
+      padding-bottom: 2.5rem;
+    }
 `;
 
 export const LeftContent = styled.div`

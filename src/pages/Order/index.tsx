@@ -33,37 +33,54 @@ import { Coffee } from "../../types";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { FooterButtons } from "../../components/Card/style";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { useFormContext } from "react-hook-form";
-import { getAddressByCEP } from "cep-address-finder";
-import { InputMask } from "react-input-mask";
-import { toast } from "react-toastify";
+// import { useFormContext, FieldErrors } from "react-hook-form";
+import * as zod from "zod";
+import { FormEvent, useState } from "react";
+
+const orderFormSchema = zod.object({
+    cep: zod
+        .string().
+        regex(/^\d{5}-?\d{3}$/, 'Informe o CEP no formato XXXXX-XXX'),
+    street: zod.string().min(1, 'Informe a rua'),
+    complement: zod.string().optional(),
+    neighborhood: zod.string().min(1, 'Informe o bairro'),
+    city: zod.string().min(1, 'Informe a cidade'),
+    state: zod.string().length(2, 'Informe o estado'),
+    number: zod
+        .number({
+            invalid_type_error: 'Informe um número',
+        })
+        .gt(0, 'Apenas número positivo'),
+        'payment-ethod': zod.enum(['credit-card', 'debit-card', 'cash'], {
+            invalid_type_error: 'Selecione um método de pagamento',
+        }),
+})
+
+export type OrderFormSchema = zod.infer<typeof orderFormSchema>;
 
 const Order = (): JSX.Element => {
     const { cart, removeCoffee, updateCoffeeAmount } = useCartCoffee();
-    const {register, formState, setValue, getValues, setFocus } = useFormContext();
+    const [ type, setType ] = useState('credit');
+    const [street, setStreet] = useState('');
+    const [streetNumber, setStreetNumber] = useState(0);
+    const [neighborhood, setNeighborhood] = useState('');
+    const [city, setCity] = useState('');
+    const [uf, setUf] = useState('');
+    // const { formState: { errors }, watch } = useFormContext();
 
-    const { errors } = formState;
+    // const getErrors = (errors: FieldErrors<OrderFormSchema>) => {
+    //     if(errors.cep) {return errors.cep.message}
+    //     if(errors.city) {return errors.city.message}
+    //     if(errors.complement) {return errors.complement.message}
+    //     if(errors.neighborhood) {return errors.neighborhood.message}
+    //     if(errors.number) {return errors.number.message}
+    //     if(errors.state) {return errors.state.message}
+    //     if(errors.street) {return errors.street.message}
 
-    const handleAddressAutocomplet = async() => {
-        const cepInput = getValues('cep');
+    //     return false;
+    // };
 
-        if (cepInput.length >= 8) {
-            try {
-                const address = await getAddressByCEP(cepInput);
-
-                setValue('street', address.street);
-                setValue('complement',address.complement);
-                setValue('district', address.neighborhood);
-                setValue('city', address.city);
-                setValue('uf', address.state);
-            } catch (err) {
-                toast.error(`${err}`);
-            }
-        } else {
-            toast.error('CEP deve conter 8 números');
-            setFocus('cep');
-        }
-    }
+    // const formErrors = getErrors(errors);
 
     const cartFormatted = cart.map(coffee => ({
         ...coffee,
@@ -105,12 +122,27 @@ const Order = (): JSX.Element => {
         removeCoffee(coffeeId)
     }
 
+    function handleCreateNewOrder(event: FormEvent) {
+        event.preventDefault();
+
+        // console.log({
+        //     street,
+        //     streetNumber,
+        //     neighborhood,
+        //     city,
+        //     uf,
+        //     type
+        // })
+    }
+
     return (
         <Container>
             <LeftContent>
                 <h3>Complete seu pedido</h3>
                 <Content>
-                    <Form>
+                    <Form 
+                        onSubmit={handleCreateNewOrder}
+                    >
                         <HeaderForm>
                             <Address>
                                 <BiMap />
@@ -120,42 +152,46 @@ const Order = (): JSX.Element => {
                         </HeaderForm>
                         <FormBody>
                             <CpfInput
-                                className="cpf-input"
+                                id="cpf-input"
                                 type="text"
                                 placeholder="CEP"
-                                as={InputMask}
-                                mask="99.999-999"
-
+                                // {...register('cep')}
                             />
                             <StreetInput
-                                className="street-input"
-                                type="text"
+                                id="street-input"
                                 placeholder="Rua"
+                                value={street}
+                                onChange={event => setStreet(event.target.value)}
+                                // {...register('street')}
                             />
                             <NumberInput
-                                className="number-input"
-                                type=""
+                                id="number-input"
                                 placeholder="Número"
+                                value={streetNumber}
+                                onChange={event => setStreetNumber(Number(event.target.value))}
+                                // {...register('number', { valueAsNumber: true })}
                             />
                             <ComplementInput
-                                className="complement-input"
-                                type="text"
+                                id="complement-input"
                                 placeholder="Complemento"
                             />
                             <Neighborhood
-                                className="neighborhood-input"
-                                type="text"
+                                id="neighborhood-input"
                                 placeholder="Bairro"
+                                value={neighborhood}
+                                onChange={event => setNeighborhood(event.target.value)}
                             />
                             <CityInput
-                                className="city-input"
-                                type="text"
+                                id="city-input"
                                 placeholder="Cidade"
+                                value={city}
+                                onChange={event => setCity(event.target.value)}
                             />
                             <UfInput
-                                className="uf-input"
-                                type="text"
+                                id="uf-input"
                                 placeholder="UF"
+                                value={uf}
+                                onChange={event => setUf(event.target.value)}
                             />
                         </FormBody>
                     </Form>
@@ -169,17 +205,26 @@ const Order = (): JSX.Element => {
                         </HeaderPaymen>
                         <MethodPayment>
                             <PaymentButton
-                                type="button">
+                                type="button"
+                                isActive={ type === 'credit'}
+                                onClick={() => { setType('credit'); }}
+                            >
                                 <TbCreditCard />
                                 <span>Cartão de crédito</span>
                             </PaymentButton>
                             <PaymentButton
-                                type="button">
+                                type="button"
+                                isActive={ type === 'debit'}
+                                onClick={() => { setType('debit'); }}
+                            >
                                 <TbCreditCard />
                                 <span>cartão de débito</span>
                             </PaymentButton>
                             <PaymentButton
-                                type="button">
+                                type="button"
+                                isActive={ type === 'money'}
+                                onClick={() => { setType('money'); }}
+                            >
                                 <TbCreditCard />
                                 <span>dinheiro</span>
                             </PaymentButton>
@@ -211,6 +256,7 @@ const Order = (): JSX.Element => {
                                                 <span>{coffee.amount}</span>
                                                 <button
                                                     onClick={() => handleCoffeeIncrement(coffee)}
+                                                    disabled={coffee.amount === 10}
                                                     type="button"
                                                 >
                                                     <AiOutlinePlus />
@@ -242,11 +288,14 @@ const Order = (): JSX.Element => {
                             <h3>Total</h3>
                             <h3>R$ {total}</h3>
                         </div>
-                        <Link to={"/deliver"}>
-                            <button>
-                                CONFIRMAR PEDIDO
-                            </button>
-                        </Link>
+                        <button
+                            type="submit"
+                            className="submit-btn"
+                            disabled={cart.length === 0}
+                            onSubmit={handleCreateNewOrder}
+                        >
+                            CONFIRMAR PEDIDO
+                        </button>
                     </CartFooter>
                 </Cart>
             </RightContent>

@@ -1,7 +1,7 @@
 {
   "coffees": [
     {
-      "id": "expresso-tradicional",
+      "id": 1,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/c9c35646-03e7-450a-ade2-9ef9a90df27a",
       "typeCoffee": ["Tradicional"],
       "name": "Expresso Tradicional",
@@ -9,7 +9,7 @@
       "price": 9.90
     },
     {
-      "id": "expresso-americano",
+      "id": 2,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/1726daae-f09f-4e0a-a306-75591d327c3e",
       "typeCoffee": ["Tradicional"],
       "name": "Expresso Americano",
@@ -17,7 +17,7 @@
       "price": 9.90
     },
     {
-      "id": "expresso-cremoso",
+      "id": 3,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/03251b99-4946-4d9b-a255-9d4b2ef5e39c",
       "typeCoffee": ["Tradicional"],
       "name": "Expresso Cremoso",
@@ -25,7 +25,7 @@
       "price": 9.90
     },
     {
-      "id": "expresso-gelado",
+      "id": 4,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/8ef44829-33f5-4b33-9829-7cfaf31f5c3b",
       "typeCoffee": ["Tradicional", "Gelado"],
       "name": "Expresso Gelado",
@@ -33,7 +33,7 @@
       "price": 9.90
     },
     {
-      "id": "cafe-com-leite",
+      "id": 5,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/7e246e59-9e7b-4be7-8b50-a99c26680506",
       "typeCoffee": ["Tradicional", "Com Leite"],
       "name": "Café com Leite",
@@ -41,7 +41,7 @@
       "price": 9.90
     },
     {
-      "id": "latte",
+      "id": 6,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/1f7211ea-e9d3-4f8a-8515-2fbe70332750",
       "typeCoffee": ["Tradicional", "Com Leite"],
       "name": "Latte",
@@ -49,7 +49,7 @@
       "price": 9.90
     },
     {
-      "id": "capuccino",
+      "id": 7,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/1ca89aee-a73c-4b86-a393-34b0f2880c1c",
       "typeCoffee": ["Tradicional", "Com Leite"],
       "name": "Capuccino",
@@ -57,7 +57,7 @@
       "price": 9.90 
     },
     {
-      "id": "macchiato",
+      "id": 8,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/99306795-e33d-445e-bd6c-03c53bb011d5",
       "typeCoffee": ["Tradicional", "Com Leite"],
       "name": "Macchiato",
@@ -65,7 +65,7 @@
       "price": 9.90
     },
     {
-      "id": "mocaccino",
+      "id": 9,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/541abe06-54ae-45e0-908e-50a0c2af7c62",
       "typeCoffee": ["Tradicional", "Com Leite"],
       "name": "Mocaccino",
@@ -73,7 +73,7 @@
       "price": 9.90
     },
     {
-      "id": "chocolate-quente",
+      "id": 10,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/535b00de-ccf8-4e44-a32b-f60bdda96e8f",
       "typeCoffee": ["Especial", "Com Leite"],
       "name": "Chocolate Quente",
@@ -81,7 +81,7 @@
       "price": 9.90
     },
     {
-      "id": "cubano",
+      "id": 11,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/c9bf29b7-c9e0-4a1f-98d5-9117e6754455",
       "typeCoffee": ["Especial", "Alcoólico", "Gelado"],
       "name": "Cubano",
@@ -89,7 +89,7 @@
       "price": 9.90
     },
     {
-      "id": "havaiano",
+      "id": 12,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/f82bb304-7192-4564-b437-06e1111574d7",
       "typeCoffee": ["Especial"],
       "name": "Havaiano",
@@ -97,7 +97,7 @@
       "price": 9.90
     },
     {
-      "id": "arabe",
+      "id": 13,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/504ab5cf-3e96-4870-9589-1ef895f61bee",
       "typeCoffee": ["Especial"],
       "name": "Árabe",
@@ -105,7 +105,7 @@
       "price": 9.90
     },
     {
-      "id": "irlandes",
+      "id": 14,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/77ed0e88-f20e-4e3b-98a2-6fb6c507a81f",
       "typeCoffee": ["Especial", "Alcoólico"],
       "name": "Irlandês",

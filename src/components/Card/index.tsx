@@ -5,6 +5,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import 'aos/dist/aos.css';
 import { ChangeEvent, useState } from "react";
 import { useCartCoffee } from "../../hooks/useCart";
+import { formattedPrice } from "../../util/format";
 
 export interface CoffeeCardProps {
     coffee: {
@@ -19,8 +20,13 @@ export interface CoffeeCardProps {
 }
 
 export function Card({ coffee }: CoffeeCardProps) {
-    const { addCoffee } = useCartCoffee();
+    const { cart, addCoffee } = useCartCoffee();
     const [amountCoffee, setAmountCoffee] = useState(1);
+
+    const cartFormatted = cart.map(coffee => ({
+        ...coffee,
+        priceFormatted: formattedPrice(coffee.price),
+    }))
 
     function handleDecrement() {
         amountCoffee - 1 >= 0 && setAmountCoffee(amountCoffee - 1);
@@ -56,18 +62,20 @@ export function Card({ coffee }: CoffeeCardProps) {
                 <div>
                     <FooterButtons>
                         <button
+                            disabled={amountCoffee <= 1}
                             onClick={handleDecrement}
                         >
                             <AiOutlineMinus />
                         </button>
                         <input 
                             type="text"
-                            min={0}
+                            min={1}
                             max={10}
                             onChange={handleChangeAmount}
                             value={amountCoffee}
                         />
                         <button
+                            disabled={amountCoffee === 10}
                             onClick={handleIncrement}
                         >
                             <AiOutlinePlus />

@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
+  width: 100%;
   margin: 0 auto;
 `;
 
 export const CardContainer = styled.div`
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   gap: 3.375rem;

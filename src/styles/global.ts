@@ -61,7 +61,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     #root {
-        max-width: 1440px;
+        /* max-width: 1440px; */
         margin: 0 auto;
     }
 
