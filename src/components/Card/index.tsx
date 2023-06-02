@@ -20,14 +20,8 @@ export interface CoffeeCardProps {
 }
 
 export function Card({ coffee }: CoffeeCardProps) {
-    const { cart, addCoffee } = useCartCoffee();
-    const [amountCoffee, setAmountCoffee] = useState(1);
-
-    const cartFormatted = cart.map(coffee => ({
-        ...coffee,
-        priceFormatted: formattedPrice(coffee.price),
-    }))
-
+    const { cart, addCoffee, amountCoffee, setAmountCoffee } = useCartCoffee();
+    
     function handleDecrement() {
         amountCoffee - 1 >= 0 && setAmountCoffee(amountCoffee - 1);
     }

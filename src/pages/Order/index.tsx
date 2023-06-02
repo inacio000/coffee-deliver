@@ -59,7 +59,7 @@ const orderFormSchema = zod.object({
 export type OrderFormSchema = zod.infer<typeof orderFormSchema>;
 
 const Order = (): JSX.Element => {
-    const { cart, removeCoffee, updateCoffeeAmount } = useCartCoffee();
+    const { cart, removeCoffee, amountCoffee, updateCoffeeAmount } = useCartCoffee();
     const [ type, setType ] = useState('credit');
     const [street, setStreet] = useState('');
     const [streetNumber, setStreetNumber] = useState(0);
@@ -253,7 +253,7 @@ const Order = (): JSX.Element => {
                                                     <AiOutlineMinus />
                                                 </button>
 
-                                                <span>{coffee.amount}</span>
+                                                <span>{amountCoffee}</span>
                                                 <button
                                                     onClick={() => handleCoffeeIncrement(coffee)}
                                                     disabled={coffee.amount === 10}

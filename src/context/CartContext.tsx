@@ -42,6 +42,9 @@ export interface CartContextData {
     removeCoffee: (coffeeId: number) => void;
     updateCoffeeAmount: ({ coffeeId, amount }: UpdateCoffeeAmount) => void;
     addNewOrder: (data: NewOrder) => void;
+
+    amountCoffee: number;
+    setAmountCoffee: any;
 }
 
 export const CartContext = createContext<CartContextData>(
@@ -51,13 +54,9 @@ export const CartContext = createContext<CartContextData>(
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
     const [cart, setCart] = useState<Coffee[]>([]);
+    const [amountCoffee, setAmountCoffee] = useState(1);
 
     const prevCartRef = useRef<Coffee[]>();
-
-    useEffect(() => {
-        prevCartRef.current = cart;
-    })
-    
 
     // const cartPreviousValue = prevCartRef.current ?? cart;
 
@@ -133,7 +132,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
     return (
         <CartContext.Provider
-            value={{ cart, addCoffee, removeCoffee, updateCoffeeAmount, addNewOrder}}
+            value={{ cart, addCoffee, removeCoffee, updateCoffeeAmount, addNewOrder, amountCoffee, setAmountCoffee}}
         >
             {children}
         </CartContext.Provider>

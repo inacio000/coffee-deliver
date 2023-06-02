@@ -6,7 +6,7 @@
       "typeCoffee": ["Tradicional"],
       "name": "Expresso Tradicional",
       "description": "O tradicional café feito com água quente e grãos moídos",
-      "price": 9.90
+      "price": 8.60
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "typeCoffee": ["Tradicional"],
       "name": "Expresso Americano",
       "description": "Expresso diluído, menos intenso que o tradicional",
-      "price": 9.90
+      "price": 7.77
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "typeCoffee": ["Tradicional"],
       "name": "Expresso Cremoso",
       "description": "Café expresso tradicional com espuma cremosa",
-      "price": 9.90
+      "price": 8.50
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "typeCoffee": ["Tradicional", "Gelado"],
       "name": "Expresso Gelado",
       "description": "Bebida preparada com café expresso e cubos de gelo",
-      "price": 9.90
+      "price": 7.40
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "typeCoffee": ["Tradicional", "Com Leite"],
       "name": "Café com Leite",
       "description": "Meio a meio de expresso tradicional com leite vaporizado",
-      "price": 9.90
+      "price": 8.30
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "typeCoffee": ["Tradicional", "Com Leite"],
       "name": "Latte",
       "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
-      "price": 9.90
+      "price": 9.10
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "typeCoffee": ["Tradicional", "Com Leite"],
       "name": "Capuccino",
       "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
-      "price": 9.90 
+      "price": 8.88 
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "typeCoffee": ["Tradicional", "Com Leite"],
       "name": "Macchiato",
       "description": "Café expresso misturado com um pouco de leite quente e espuma",
-      "price": 9.90
+      "price": 6.20
     },
     {
       "id": 9,
@@ -70,7 +70,7 @@
       "typeCoffee": ["Tradicional", "Com Leite"],
       "name": "Mocaccino",
       "description": "Café expresso com calda de chocolate, pouco leite e espuma",
-      "price": 9.90
+      "price": 9.50
     },
     {
       "id": 10,
@@ -78,7 +78,7 @@
       "typeCoffee": ["Especial", "Com Leite"],
       "name": "Chocolate Quente",
       "description": "Bebida feita com chocolate dissolvido no leite quente e café",
-      "price": 9.90
+      "price": 6.30
     },
     {
       "id": 11,
@@ -86,7 +86,7 @@
       "typeCoffee": ["Especial", "Alcoólico", "Gelado"],
       "name": "Cubano",
       "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
-      "price": 9.90
+      "price": 8.80
     },
     {
       "id": 12,
@@ -94,7 +94,7 @@
       "typeCoffee": ["Especial"],
       "name": "Havaiano",
       "description": "Bebida adocicada preparada com café e leite de coco",
-      "price": 9.90
+      "price": 9.00
     },
     {
       "id": 13,
@@ -102,7 +102,7 @@
       "typeCoffee": ["Especial"],
       "name": "Árabe",
       "description": "Bebida preparada com grãos de café árabe e especiarias",
-      "price": 9.90
+      "price": 8.50
     },
     {
       "id": 14,
@@ -110,7 +110,47 @@
       "typeCoffee": ["Especial", "Alcoólico"],
       "name": "Irlandês",
       "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly ",
-      "price": 9.90
+      "price": 7.60
+    },
+    {
+      "id": 15,
+      "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/b3d8e0bf-f97c-4f68-932e-dfdeed9b0070",
+      "typeCoffee": ["Especial", "Com Leite"],
+      "name": "Cortado",
+      "description": "Bebida a base de café, leite e chocolate",
+      "price": 10.00
+    },
+    {
+      "id": 16,
+      "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/e7c3d3d9-db78-4814-bf8a-c4c55e56677c",
+      "typeCoffee": ["Especial", "Com Leite"],
+      "name": "Flat White",
+      "description": "Bebida a base de café, leite e chocolate branco",
+      "price": 11.00
+    },
+    {
+      "id": 17,
+      "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/26e40cf3-ec6a-48f9-9eb1-c82d1a4e8a96",
+      "typeCoffee": ["Especial", "Com Leite"],
+      "name": "Lungo",
+      "description": "Bebida a base de café, leite, chocolate branco e Caramelo",
+      "price": 12.10
+    },
+    {
+      "id": 18,
+      "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/1d11d3c0-7e2e-421d-96b7-2241acd11207",
+      "typeCoffee": ["Especial", "Com Leite"],
+      "name": "Mokachino",
+      "description": "Bebida a base de café, leite, chocolate branco e Morango",
+      "price": 9.12
+    },
+    {
+      "id": 19,
+      "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/9ee4ebad-c48c-4886-931f-2a47cce88a4e",
+      "typeCoffee": ["Puro", "Amargo"],
+      "name": "Puro",
+      "description": "Bebida a base de café puro",
+      "price": 10.14
     }
   ]
 }
