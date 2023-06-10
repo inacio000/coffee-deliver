@@ -121,36 +121,12 @@
       "price": 10.00
     },
     {
-      "id": 16,
-      "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/e7c3d3d9-db78-4814-bf8a-c4c55e56677c",
-      "typeCoffee": ["Especial", "Com Leite"],
-      "name": "Flat White",
-      "description": "Bebida a base de café, leite e chocolate branco",
-      "price": 11.00
-    },
-    {
-      "id": 17,
-      "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/26e40cf3-ec6a-48f9-9eb1-c82d1a4e8a96",
-      "typeCoffee": ["Especial", "Com Leite"],
-      "name": "Lungo",
-      "description": "Bebida a base de café, leite, chocolate branco e Caramelo",
-      "price": 12.10
-    },
-    {
       "id": 18,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/1d11d3c0-7e2e-421d-96b7-2241acd11207",
       "typeCoffee": ["Especial", "Com Leite"],
       "name": "Mokachino",
       "description": "Bebida a base de café, leite, chocolate branco e Morango",
       "price": 9.12
-    },
-    {
-      "id": 19,
-      "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/9ee4ebad-c48c-4886-931f-2a47cce88a4e",
-      "typeCoffee": ["Puro", "Amargo"],
-      "name": "Puro",
-      "description": "Bebida a base de café puro",
-      "price": 10.14
     }
   ]
 }

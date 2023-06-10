@@ -9,22 +9,22 @@ export interface NewOrder {
     address: {
         cep: string;
         street: string;
-        phoneNumber: string;
+        streetNumber: string;
         complement?: string;
-        district: string;
+        neighborhood: string;
         city: string;
-        uf: string;
+        state: string;
     };
     paymentMethod: string;
     itemOrdered: {
-        coffeeId: string;
-        coffeeName: string;
-        price: number;
-        amount: number;
+        idCoffee: string;
+        nameCoffee: string;
+        priceCoffee: number;
+        amountCoffee: number;
     }[];
     totalItem: number;
     shippingPrice: number;
-    orderData: Date;
+    orderDate: Date;
 }
 
 export interface CartProviderProps {
@@ -32,19 +32,16 @@ export interface CartProviderProps {
 }
 
 interface UpdateCoffeeAmount {
-    coffeeId: number;
+    coffeeId: string;
     amount: number;
 }
 
 export interface CartContextData {
     cart: Coffee[];
-    addCoffee: (coffeeId: number, amount: number) => Promise<void>;
-    removeCoffee: (coffeeId: number) => void;
+    addCoffee: (coffeeId: string, amount: number) => Promise<void>;
+    removeCoffee: (coffeeId: string) => void;
     updateCoffeeAmount: ({ coffeeId, amount }: UpdateCoffeeAmount) => void;
     addNewOrder: (data: NewOrder) => void;
-
-    amountCoffee: number;
-    setAmountCoffee: any;
 }
 
 export const CartContext = createContext<CartContextData>(
@@ -52,27 +49,45 @@ export const CartContext = createContext<CartContextData>(
 );
 
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
+    const [cart, setCart] = useState<Coffee[]>(() => {
+        const storageCart = localStorage.getItem('@CoffeeDelivery:cart')
 
-    const [cart, setCart] = useState<Coffee[]>([]);
-    const [amountCoffee, setAmountCoffee] = useState(1);
+        if (storageCart) {
+            return JSON.parse(storageCart);
+        }
+
+        return [];
+    });
 
     const prevCartRef = useRef<Coffee[]>();
 
-    // const cartPreviousValue = prevCartRef.current ?? cart;
+    useEffect(() => {
+        prevCartRef.current = cart
+    })
 
-    const addCoffee = async(coffeeId: number, amount: number) => {
+    const cartPreviousValue = prevCartRef.current ?? cart;
+
+    useEffect(() => {
+        if (cartPreviousValue !== cart)  {
+            localStorage.setItem('@CoffeeDelivery:cart', JSON.stringify(cart));
+        }
+    }, [cart, cartPreviousValue])
+
+    console.log(cart.map(cofe => cofe.amount))
+
+    async function addCoffee(coffeeId: string, amount: number) {
         try {
             const updateCart = [...cart];
-            const coffeeExists = updateCart.find(coffee => coffee.id === coffeeId);
+            const coffeeExists = updateCart.find((coffee) => coffee.id === coffeeId);
 
             if(coffeeExists) {
-                coffeeExists.amount = amount;
+                coffeeExists.amount += amount;
             } else {
                 const coffee = await api.get(`/coffees/${coffeeId}`);
 
                 const newCoffee = {
                     ...coffee.data,
-                    amount: 1
+                    amount
                 }
                 updateCart.push(newCoffee);
             }
@@ -85,10 +100,10 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         }
     };
 
-    const removeCoffee = (coffeeId: number) => {
+    function removeCoffee(coffeeId: string) {
         try {
             const updateCart = [...cart];
-            const coffeeIndex = updateCart.findIndex(coffee => coffee.id === coffeeId);
+            const coffeeIndex = updateCart.findIndex((coffee) => coffee.id === coffeeId);
 
             if (coffeeIndex >= 0) {
                 updateCart.splice(coffeeIndex, 1);
@@ -102,17 +117,14 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         }
     };
 
-    const updateCoffeeAmount = ({
-        coffeeId,
-        amount,
-    }: UpdateCoffeeAmount) => {
+    function updateCoffeeAmount({ coffeeId, amount }: UpdateCoffeeAmount) {
         try {
-            if(amount <= 0) {
-                return;
+            if(amount <= 0 || amount > 10) {
+                return
             }
 
             const updateCart = [...cart];
-            const coffeeExists = updateCart.find(coffee => coffee.id === coffeeId);
+            const coffeeExists = updateCart.find((coffee) => coffee.id === coffeeId);
 
             if(coffeeExists) {
                 coffeeExists.amount = amount;
@@ -127,12 +139,14 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     }
 
     const addNewOrder = (data: NewOrder) => {
-        return data;
+        localStorage.setItem('@CoffeeDelivery:order', JSON.stringify(data));
+        localStorage.removeItem('@CoffeeDelivery:cart');
+        window.location.href = '/order/deliver'
     }
 
     return (
         <CartContext.Provider
-            value={{ cart, addCoffee, removeCoffee, updateCoffeeAmount, addNewOrder, amountCoffee, setAmountCoffee}}
+            value={{ cart, addCoffee, removeCoffee, updateCoffeeAmount, addNewOrder}}
         >
             {children}
         </CartContext.Provider>

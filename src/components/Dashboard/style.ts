@@ -9,7 +9,6 @@ export const Container = styled.div`
   justify-content: center;
   margin-top: 10rem;
 
-
   background: url(${background}) no-repeat top center/cover;
 
 `;
@@ -24,8 +23,6 @@ export const Content = styled.div`
       text-align: center;
       align-items: center;
       flex-direction: column;
-
-      background: url(${verticalBackground}) no-repeat top center/cover;
     }
 
     @media (max-width: 570px) {

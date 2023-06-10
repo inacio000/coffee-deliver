@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { Header } from "./components/Header";
-import { Routes } from "./routes";
+import { Router } from "./Router";
 import { GlobalStyle } from "./styles/global";
 import { useEffect } from "react";
 import AOS from 'aos'
@@ -16,8 +16,7 @@ export function App() {
     <BrowserRouter>
       <CartProvider>
         <GlobalStyle />
-        <Header />
-        <Routes />
+        <Router />
       </CartProvider>
     </BrowserRouter>
   );

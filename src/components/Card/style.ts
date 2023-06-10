@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const CardItemn = styled.div`
@@ -14,6 +13,7 @@ export const CardItemn = styled.div`
 
   img {
     width: 120px;
+    height: 120px;
     margin: -2rem 0 1rem;
   }
 
@@ -33,19 +33,20 @@ export const MainCard = styled.div`
   margin: 0 auto 1.5rem;
 
   h6 {
-    width: 81px;
-    height: 21px;
     display: flex;
+    gap: 0.5rem;
     justify-content: center;
     align-items: center;
-    border-radius: 6.25rem;
-    margin-bottom: 1rem;
-
-    background: var(--yellow-light);
-
+    
     span {
-      font-size: 10px;
+      padding: 4px 8px;
       font-weight: 700;
+      font-size: 0.625rem;
+      border-radius: 6.25rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+  
+      background: var(--yellow-light);
       color: var(--yellow-dark);
     }
   }

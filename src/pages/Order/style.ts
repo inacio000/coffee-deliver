@@ -4,7 +4,7 @@ interface ButtonProps {
   isActive: boolean;
 }
 
-export const Container = styled.div`
+export const Container = styled.form`
   max-width: 1440px;
   display: flex;
   justify-content: space-between;
@@ -19,21 +19,6 @@ export const Container = styled.div`
 
   svg {
     color: var(--yellow-dark);
-  }
-
-  input {
-    padding: 0.7rem;
-    background: var(--base-input);
-    border-radius: 0.25rem;
-    border: 1px solid var(--base-button);
-
-    &:is(:focus) {
-      outline: 1px var(--yellow) solid;
-    }
-
-    &::placeholder {
-      color: var(--base-label);
-    }
   }
 
   @media (max-width: 1140px) {
@@ -68,13 +53,13 @@ export const LeftContent = styled.div`
   }
 `;
 
-export const Content = styled.form`
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
 `;
 
-export const Form = styled.form`
+export const Form = styled.div`
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
@@ -83,8 +68,33 @@ export const Form = styled.form`
   background: var(--base-card);
   border-radius: 0.375rem;
 
+  .error {
+    color: var(--base-error);
+    padding-left: 0.2rem;
+  }
+
   @media (max-width: 300px) {
     padding: 2.5rem 0.875rem;
+  }
+`;
+
+export const HeaderForm = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  p {
+    padding-left: 1.5rem;
+    font-size: 0.8rem;
+  }
+`;
+
+export const Address = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  span {
+    color: var(--base-subtitle);
   }
 `;
 
@@ -146,33 +156,9 @@ export const FormBody = styled.div`
   }
 `;
 
-export const HeaderForm = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  p {
-    padding-left: 1.5rem;
-    font-size: 0.8rem;
-  }
-`;
-
-export const Address = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  span {
-    color: var(--base-subtitle);
-  }
-`;
-
 export const MethodPayment = styled.div`
   display: flex;
   justify-content: space-between;
-
-  button {
-   
-  }
 
   @media (max-width: 670px) {
     display: grid;
@@ -191,27 +177,6 @@ export const MethodPayment = styled.div`
       width: 100%;
       justify-content: center;
     }
-  }
-`;
-
-export const PaymentButton = styled.button<ButtonProps>`
-  display: flex;
-  align-items: center;
-  gap: 0.8125rem;
-  width: 11.166875rem;
-  padding: 1rem;
-  border: 1px solid ${(props) => props.isActive ? '#8047F8' : 'none'};
-  border-radius: 0.375rem;
-  background: ${(props) => props.isActive ? '#EBE5F9' : '#E6E5E5'};
-
-  &:hover {
-    background-color: var(--base-hover);
-  }
-
-  svg {
-    width: 1rem;
-    height: 1rem;
-    color: var(--purple);
   }
 `;
 
@@ -286,6 +251,15 @@ export const CartFooter = styled.div`
   flex-direction: column;
   gap: 1rem;
 
+  .cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: scroll;
+    max-height: 250px;
+    margin-right: -0.6rem;
+  }
+
   div {
     display: flex;
     justify-content: space-between;
@@ -331,7 +305,6 @@ export const ContentCardCart = styled.div`
 
     &:first-child() {
         color: var(--base-subtitle);
-        border: 1px solid red;
       }
 
     span {
@@ -406,39 +379,4 @@ export const ContentCardCart = styled.div`
   h4 {
     grid-area: price;
   }
-`;
-
-export const Opcional = styled.div`
-  position: relative;
-  display: flex;
-  
-`
-
-// Inputs
-export const CpfInput = styled.input`
-  /* width: 12.5rem; */
-`;
-
-export const StreetInput = styled.input`
-  /* width: 100%; */
-`;
-
-export const NumberInput = styled.input`
-  /* width: 12.5rem; */
-`;
-
-export const ComplementInput = styled.input`
-  /* width: 21.65rem; */
-`;
-
-export const Neighborhood = styled.input`
-  /* width: 12.5rem; */
-`;
-
-export const CityInput = styled.input`
-  /* width: 17.25rem; */
-`;
-
-export const UfInput = styled.input`
-  /* width: 3.75rem; */
 `;

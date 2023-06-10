@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
         --base-text: #574F4D;
         --base-label: #8D8686;
         --base-white: #FFFFFF;
+        --base-error: #F84747;
 
         --base-hover: #D7D5D5;
         --base-button: #E6E5E5;

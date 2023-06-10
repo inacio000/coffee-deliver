@@ -5,12 +5,18 @@ import cartImg from "../../assets/icons/Type=shopping-cart-fill.svg"
 import { Container, Content, Location, Order } from "./style";
 import { useCartCoffee } from "../../hooks/useCart";
 
-export function Header() {
+interface HeaderProps {
+    isFixed?: boolean;
+}
+
+export function Header({ isFixed = false }: HeaderProps) {
     const { cart } = useCartCoffee();
     const cartSize = cart.length;
 
     return (
-        <Container>
+        <Container
+            className={isFixed ? 'header-fixed' : ''}
+        >
             <Content>
                 <Link to={"/"}>
                     <img src={logo} alt="Logo" />

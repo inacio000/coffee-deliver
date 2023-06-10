@@ -9,7 +9,7 @@ import { formattedPrice } from "../../util/format";
 
 export interface CoffeeCardProps {
     coffee: {
-        id: number;
+        id: string;
         avatar: string;
         typeCoffee: string[];
         name: string;
@@ -20,18 +20,19 @@ export interface CoffeeCardProps {
 }
 
 export function Card({ coffee }: CoffeeCardProps) {
-    const { cart, addCoffee, amountCoffee, setAmountCoffee } = useCartCoffee();
+    const {  addCoffee } = useCartCoffee();
+    const [amountCoffee, setAmountCoffee] = useState(1);
     
     function handleDecrement() {
-        amountCoffee - 1 >= 0 && setAmountCoffee(amountCoffee - 1);
+        setAmountCoffee((stateAmount) => stateAmount - 1);
     }
 
     function handleIncrement() {
-        amountCoffee + 1 <= 10 && setAmountCoffee(amountCoffee + 1);
+        setAmountCoffee((stateAmount) => stateAmount + 1);
     }
 
     function handleChangeAmount(event: ChangeEvent<HTMLInputElement>) {
-        if (event.target.valueAsNumber > 0 && event.target.valueAsNumber <= 10) {
+        if (event.target.valueAsNumber > 0) {
             setAmountCoffee(event.target.valueAsNumber)
         }
     }
@@ -44,7 +45,14 @@ export function Card({ coffee }: CoffeeCardProps) {
             <img src={coffee.avatar} alt={coffee.name} />
 
             <MainCard>
-                <h6><span>{coffee.typeCoffee}</span></h6>
+                <h6>{
+                    coffee.typeCoffee.map(type => (
+                        <span key={type}>
+                            {type}
+                        </span>
+                    ))
+                }
+                </h6>
                 <h4>{coffee.name}</h4>
                 <p>{coffee.description}</p>
             </MainCard>
@@ -64,12 +72,10 @@ export function Card({ coffee }: CoffeeCardProps) {
                         <input 
                             type="text"
                             min={1}
-                            max={10}
                             onChange={handleChangeAmount}
                             value={amountCoffee}
                         />
                         <button
-                            disabled={amountCoffee === 10}
                             onClick={handleIncrement}
                         >
                             <AiOutlinePlus />

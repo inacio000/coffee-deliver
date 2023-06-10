@@ -8,6 +8,10 @@ export const Container = styled.header`
   left: 0;
   right: 0;
   z-index: 2;
+  
+  /* .header-fixed {
+    position: fixed;
+  } */
 `;
 
 export const Content = styled.div`
