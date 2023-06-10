@@ -2,7 +2,16 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     ::-webkit-scrollbar {
-       display: none;
+       width: 0.3rem;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1.5rem;
+        background: var(--purple);
     }
 
     :root {

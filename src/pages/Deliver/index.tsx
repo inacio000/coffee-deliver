@@ -2,18 +2,25 @@ import { Container, Content, ContentLeft, Icon, Order } from "./style";
 import illustration from "../../assets/icons/Illustration.svg"
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { NewOrderFormData } from "../Order";
-import { Navigate } from "react-router-dom";
-import { NewOrder } from "../../context/CartContext";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { formattedPrice } from "../../util/format";
+import { LocationType } from "../../types";
+import { PaymentMethods, paymentMethods } from "../../components/FormOrder/PaymentMethods";
+import { useEffect } from "react";
 
 export function Deliver() {
-    const order: NewOrder | null = JSON.parse(
-        `${localStorage.getItem('@CoffeeDeliver:order')}`,
-    )
+    const { state } = useLocation() as unknown as LocationType;
+    const navigate = useNavigate();
 
-    if (!order) {
-        return <Navigate to="/" />
-    }
+    useEffect(() => {
+        {
+            if(!state) {
+                navigate("/")
+            }
+        }
+    }, []);
+
+    if(!state) return <></>
 
     return (
         <Container>
@@ -30,8 +37,8 @@ export function Deliver() {
                                     <FaMapMarkerAlt />
                                 </Icon>
                                 <div>
-                                    <p>Entrega em <span>{`${order?.address.street}, ${order?.address.streetNumber}`}</span></p>
-                                    <p>{`${order?.address.cep} - ${order?.address.city} / ${order?.address.state}`}</p>
+                                    <p>Entrega em <span>{`${state.street}, ${state.streetNumber}`}</span></p>
+                                    <p>{`${state.cep} - ${state.city} / ${state.state}`}</p>
                                 </div>
                             </li>
                             <li>
@@ -50,9 +57,7 @@ export function Deliver() {
                                 <div>
                                     <p>Pagamento na entrega</p>
                                     <br/>
-                                    <span>{`R$ ${formattedPrice(
-                                        order?.totalItem + order?.shippingPrice ,
-                                    )} - ${order.paymentMethod}`}</span>
+                                    <span>{paymentMethods[state.paymentMethod].label}</span>
                                 </div>
                             </li>
                         </ul>
@@ -64,7 +69,7 @@ export function Deliver() {
                     src={illustration}
                     alt=""
                     data-aos="fade-right"
-                    data-aos-duration="4000"
+                    data-aos-duration="10000"
                 />
             </div>
         </Container>

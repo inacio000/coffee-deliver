@@ -1,3 +1,5 @@
+import { NewOrderFormData } from "./pages/Order";
+
 export interface Coffee {
     id: string;
     avatar: string;
@@ -17,4 +19,8 @@ export interface OrderFormData {
     state: string;
     streetNumber: string;
     paymentMethod: string;
+}
+
+export interface LocationType {
+    state: NewOrderFormData
 }

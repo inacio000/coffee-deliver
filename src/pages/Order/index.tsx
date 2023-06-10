@@ -5,6 +5,8 @@ import { z } from "zod";
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormOrder } from "../../components/FormOrder";
 import { CoffeeCartCard } from "../../components/FormOrder/CoffeeCartCard";
+import { useNavigate } from "react-router-dom";
+import { useCartCoffee } from "../../hooks/useCart";
 
 enum PaymentMethods {
     credit = "credit",
@@ -32,54 +34,22 @@ export type NewOrderFormData = z.infer<typeof orderFormSchema>;
 type ConfirmOrderFormData = NewOrderFormData;
 
 export function Order() {
+    const { clearCart } = useCartCoffee()
       
     const newOrderForm = useForm<ConfirmOrderFormData>({ 
-        resolver: zodResolver(orderFormSchema),
-        defaultValues: {
-            cep: '',
-            street: '',
-            streetNumber: '',
-            neighborhood: '',
-            complement: '',
-            city: '',
-            state: '',
-            paymentMethod: undefined,
-        },
+        resolver: zodResolver(orderFormSchema)
     })
+
+    const navigate = useNavigate();
 
     const { handleSubmit} = newOrderForm;
 
-    // watch('paymentMethod')
-
     const handleCreateNewOrder = (data: ConfirmOrderFormData) => {
-        // const newOrder = {
-        //     id: '1',
-        //     address: {
-        //         cep: data.cep,
-        //         street: data.street,
-        //         streetNumber: data.streetNumber,
-        //         complement: data.complement,
-        //         neighborhood: data.neighborhood,
-        //         city: data.city,
-        //         state: data.state,
-        //     },
-        //     paymentMethod: data.paymentMethod,
-        //     itemOrdered: cart.map(coffee => {
-        //         return {
-        //             idCoffee: coffee.id.toString(),
-        //             nameCoffee: coffee.name,
-        //             priceCoffee: coffee.price,
-        //             amountCoffee: coffee.amount, 
-        //         }
-        //     }),
-        //     totalItem: Number(total),
-        //     shippingPrice,
-        //     orderDate: new Date(),
-        // }
+        navigate("/deliver", {
+            state: data,
+        });
 
-        // addNewOrder(newOrder)
-        // reset()
-        console.log(data)
+        clearCart();
     }
 
     return (

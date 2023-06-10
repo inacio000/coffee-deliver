@@ -14,7 +14,7 @@ interface CoffeeProduct {
 }
 
 export function CoffeeCartCard() {
-  const { cart, removeCoffee, updateCoffeeAmount, addNewOrder } = useCartCoffee();
+  const { cart, removeCoffee, updateCoffeeAmount } = useCartCoffee();
   
   const cartFormatted = cart.map(coffee => ({
     ...coffee,
@@ -118,7 +118,6 @@ export function CoffeeCartCard() {
                     type="submit"
                     className="submit-btn"
                     disabled={cart.length <= 0}
-                    // onSubmit={handleSubmit}
                 >
                     CONFIRMAR PEDIDO
                 </button>

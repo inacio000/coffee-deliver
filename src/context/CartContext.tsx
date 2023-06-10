@@ -2,30 +2,6 @@ import { ReactNode, createContext, useEffect, useRef, useState } from "react";
 import { Coffee } from "../types";
 import { api } from "../services/api";
 import { toast } from "react-toastify";
-import { formattedPrice } from "../util/format";
-
-export interface NewOrder {
-    id: string;
-    address: {
-        cep: string;
-        street: string;
-        streetNumber: string;
-        complement?: string;
-        neighborhood: string;
-        city: string;
-        state: string;
-    };
-    paymentMethod: string;
-    itemOrdered: {
-        idCoffee: string;
-        nameCoffee: string;
-        priceCoffee: number;
-        amountCoffee: number;
-    }[];
-    totalItem: number;
-    shippingPrice: number;
-    orderDate: Date;
-}
 
 export interface CartProviderProps {
     children: ReactNode;
@@ -41,7 +17,7 @@ export interface CartContextData {
     addCoffee: (coffeeId: string, amount: number) => Promise<void>;
     removeCoffee: (coffeeId: string) => void;
     updateCoffeeAmount: ({ coffeeId, amount }: UpdateCoffeeAmount) => void;
-    addNewOrder: (data: NewOrder) => void;
+    clearCart: () => void;
 }
 
 export const CartContext = createContext<CartContextData>(
@@ -138,15 +114,13 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         }
     }
 
-    const addNewOrder = (data: NewOrder) => {
-        localStorage.setItem('@CoffeeDelivery:order', JSON.stringify(data));
-        localStorage.removeItem('@CoffeeDelivery:cart');
-        window.location.href = '/order/deliver'
+    function clearCart() {
+        setCart([]);
     }
 
     return (
         <CartContext.Provider
-            value={{ cart, addCoffee, removeCoffee, updateCoffeeAmount, addNewOrder}}
+            value={{ cart, addCoffee, removeCoffee, updateCoffeeAmount, clearCart}}
         >
             {children}
         </CartContext.Provider>

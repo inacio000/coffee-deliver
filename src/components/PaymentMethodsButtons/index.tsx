@@ -9,7 +9,7 @@ type PaymentMethodsProps = InputHTMLAttributes<HTMLInputElement> & {
 export const PaymentMethodsButtons = forwardRef<HTMLInputElement, PaymentMethodsProps>(({ id, icon, label, ...props }, ref) =>  {
   return (
     <PaymentMethodContainer>
-      <input {...props} name="paymentMethods" id={id} ref={ref} type="radio" />
+      <input {...props} name="paymentMethod" id={id} ref={ref} type="radio" />
       <label htmlFor={id}>
         <PaymentInputContent>
           {icon}

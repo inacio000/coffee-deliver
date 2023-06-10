@@ -39,4 +39,6 @@ export const PaymentInputContent = styled.div`
     height: 1rem;
     color: var(--purple);
   }
+
+  user-select: none;
 `

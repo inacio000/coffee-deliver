@@ -295,7 +295,7 @@ export const ContentCardCart = styled.div`
   display: flex;
   justify-content: space-between;
   padding-bottom: 2.09375rem;
-  margin-bottom: 1.59375rem;
+  margin: 0 0.5rem 1.59375rem 0;
   border-bottom: 2px solid var(--base-button);
 
   div {

@@ -16,14 +16,14 @@ export const paymentMethods = {
         icon: <BsBank2 />
     },
     money: {
-        label: "Money",
+        label: "Dinheiro",
         icon: <CiMoneyBill />
     }
 
 }
 
 export function PaymentMethods() {
-  const { register, formState: { errors } } = useFormContext();
+  const { register, formState: { errors }  } = useFormContext();
 
   const paymentMethodError = errors?.paymentMethod?.message as unknown as string;
 
@@ -40,16 +40,17 @@ export function PaymentMethods() {
           {
             Object.entries(paymentMethods).map(([key, {label, icon}]) => (
                 <PaymentMethodsButtons 
-                    key={key}
+                    key={label}
                     id={key}
                     icon={icon}                
                     label={label}
-                    {...register("paymentMethod")}
+                    value={key}
+                    {...register('paymentMethod')}
                 />
             ))
           }
       </MethodPayment>
-        {paymentMethodError && <p className="error">{paymentMethodError}</p>}
+      {paymentMethodError && <p className="error">{paymentMethodError}</p>}
     </Form>
   )
 }
