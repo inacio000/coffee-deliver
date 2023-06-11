@@ -5,7 +5,7 @@ import { NewOrderFormData } from "../Order";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { formattedPrice } from "../../util/format";
 import { LocationType } from "../../types";
-import { PaymentMethods, paymentMethods } from "../../components/FormOrder/PaymentMethods";
+import { paymentMethods } from "../../components/FormOrder/PaymentMethods";
 import { useEffect } from "react";
 
 export function Deliver() {
@@ -26,8 +26,8 @@ export function Deliver() {
         <Container>
             <ContentLeft>
                 <div>
-                    <h3>Uhu! Pedido confirmado</h3>
-                    <p>Agora é só aguardar que logo o café chegará até você</p>
+                    <h3>Ххм! Заказ подтвержден.</h3>
+                    <p>Теперь просто подождите, пока кофе скоро прибудет к вам</p>
                 </div>
                 <Content>
                     <Order>
@@ -37,7 +37,7 @@ export function Deliver() {
                                     <FaMapMarkerAlt />
                                 </Icon>
                                 <div>
-                                    <p>Entrega em <span>{`${state.street}, ${state.streetNumber}`}</span></p>
+                                    <p>Доставка по <span>{`${state.street}, ${state.streetNumber}`}</span></p>
                                     <p>{`${state.cep} - ${state.city} / ${state.state}`}</p>
                                 </div>
                             </li>
@@ -46,8 +46,8 @@ export function Deliver() {
                                     <FaMapMarkerAlt />
                                 </Icon>
                                 <div>
-                                    <p>Previsão de entrega</p>
-                                    <span>20 min - 30min</span>
+                                    <p>Доставка прибывает через...</p>
+                                    <span>20мин - 30мин</span>
                                 </div>
                             </li>
                             <li>
@@ -55,8 +55,7 @@ export function Deliver() {
                                     <FaMapMarkerAlt />
                                 </Icon>
                                 <div>
-                                    <p>Pagamento na entrega</p>
-                                    <br/>
+                                    <p>Оплата при доставке</p>
                                     <span>{paymentMethods[state.paymentMethod].label}</span>
                                 </div>
                             </li>
@@ -69,7 +68,13 @@ export function Deliver() {
                     src={illustration}
                     alt=""
                     data-aos="fade-right"
-                    data-aos-duration="10000"
+                    data-aos-duration="2000"
+                    data-aos-offset="100"
+                    data-aos-delay="10"
+                    data-aos-easing="ease-in"
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="left"
                 />
             </div>
         </Container>

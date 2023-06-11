@@ -7,7 +7,7 @@ export function FormOrder() {
     return (
         <>
             <LeftContent>
-                <h3>Complete seu pedido</h3>
+                <h3>Завершить свой заказ</h3>
                     <Content>
                         <InputsForm />
                         <PaymentMethods />

@@ -15,16 +15,16 @@ enum PaymentMethods {
 }
 
 const orderFormSchema = z.object({
-    cep: z.string().min(1, 'Informe o CEP'),
-    street: z.string().min(1, 'Informe a rua'),
-    streetNumber: z.string().min(1, 'Informe o número para entrega'),
+    cep: z.string().min(1, 'Введите номер паспорта'),
+    street: z.string().min(1, 'информировать улицу'),
+    streetNumber: z.string().min(1, 'Введите номер дома'),
     complement: z.string().optional(),
-    neighborhood: z.string().min(1, 'Informe o bairro'),
-    city: z.string().min(1, 'Informe a cidade'),
-    state: z.string().length(2, 'Informe o estado'),
+    neighborhood: z.string().optional(),
+    city: z.string().min(1, 'Введите город'),
+    state: z.string().min(1, 'Введите Область'),
     paymentMethod: z.nativeEnum(PaymentMethods, {
         errorMap:() => {
-            return { message: "Infore o método de pagamento"}
+            return { message: "Выберите способ оплаты"}
         }
     })
 })

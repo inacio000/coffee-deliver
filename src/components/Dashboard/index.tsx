@@ -12,10 +12,11 @@ export function Dashboard() {
             <Content>
                 <LeftContent
                     data-aos="fade-right"
+                    data-aos-duration="1500"
                 >
                     <div className="coffee-title">
-                        <h1>Encontre o café perfeito para qualquer hora do dia</h1>
-                        <p>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</p>
+                        <h1>Найдите идеальный кофе для любого времени суток</h1>
+                        <p>С «CoffeeDelivery» вы можете получить свой кофе в любом месте и в любое время.</p>
                     </div>
                     <div className="coffee-main">
                         <StepList>
@@ -23,25 +24,25 @@ export function Dashboard() {
                                 <CartIcon>
                                     <FaShoppingCart />
                                 </CartIcon>
-                                <p>Compra simples e segura</p>
+                                <p>Простая и безопасная покупка</p>
                             </li>
                             <li>
                                 <PackageIcon>
                                     <BiPackage />
                                 </PackageIcon>
-                                <p>Embalagem mantém o café intacto</p>
+                                <p>Упаковка сохраняет кофе в целости</p>
                             </li>
                             <li>
                                 <TimerIcon>
                                     <MdTimer />
                                 </TimerIcon>
-                                <p>Entrega rápida e rastreada</p>
+                                <p>Быстрая доставка</p>
                             </li>
                             <li>
                                 <CoffeeIcon>
                                     <GiCoffeeCup />
                                 </CoffeeIcon>
-                                <p>O café chega fresquinho até você</p>
+                                <p>Ваш кофе прибудет свежим</p>
                             </li>
                         </StepList>
                         <div>
@@ -51,6 +52,7 @@ export function Dashboard() {
                 </LeftContent>
                 <RightContent
                     data-aos="fade-left"
+                    data-aos-duration="1500"
                 >
                     <div>
                         <img src={coffee} alt="Coffee Image" />

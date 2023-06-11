@@ -126,6 +126,10 @@ export const StepList = styled.ul`
 
   @media (max-width: 320px) {
     row-gap: 1.5rem;
+
+    li > p {
+      font-size: 85%;
+    }
   }
 `;
 

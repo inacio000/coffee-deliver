@@ -24,7 +24,7 @@ export function Header({ isFixed = false }: HeaderProps) {
                 <div>
                     <Location>
                         <img src={location} alt="" />
-                        <p>Porto Alegre, RS</p>
+                        <p>Нижний Новгород</p>
                     </Location>
                     <Order to={"/order"}>
                         <span>

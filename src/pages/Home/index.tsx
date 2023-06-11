@@ -32,7 +32,7 @@ export function Home() {
         <Main>
             <Dashboard />
             <CardContainer>
-                <h3>Nossos Cafés</h3>
+                <h3>Наши кафе</h3>
                 <Cards>
                     {
                         coffees.map((coffee) => (

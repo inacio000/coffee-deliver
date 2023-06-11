@@ -1,11 +1,10 @@
-import { CardItemn, FooterCad, MainCard, CartIcon, FooterButtons, Price } from "./style";
+import { CardItem, FooterCad, MainCard, CartIcon, FooterButtons, Price } from "./style";
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineMinus } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
 import 'aos/dist/aos.css';
 import { ChangeEvent, useState } from "react";
 import { useCartCoffee } from "../../hooks/useCart";
-import { formattedPrice } from "../../util/format";
 
 export interface CoffeeCardProps {
     coffee: {
@@ -38,9 +37,10 @@ export function Card({ coffee }: CoffeeCardProps) {
     }
 
     return (
-        <CardItemn
+        <CardItem
             key={coffee.id}
             data-aos="fade-up"
+            data-aos-duration="1000"
         >
             <img src={coffee.avatar} alt={coffee.name} />
 
@@ -59,7 +59,7 @@ export function Card({ coffee }: CoffeeCardProps) {
 
             <FooterCad>
                 <Price>
-                    <span>R$</span><strong>{coffee.priceFormatted}</strong>
+                    <span>₽</span><strong>{coffee.priceFormatted}</strong>
                 </Price>
                 <div>
                     <FooterButtons>
@@ -89,6 +89,6 @@ export function Card({ coffee }: CoffeeCardProps) {
                     </CartIcon>
                 </div>
             </FooterCad>
-        </CardItemn>            
+        </CardItem>            
     )
 }

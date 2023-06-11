@@ -1,3 +1,3 @@
-export const { format: formattedPrice } = new Intl.NumberFormat("pt-br", {
+export const { format: formattedPrice } = new Intl.NumberFormat("ru-RU", {
   minimumFractionDigits: 2
 });

@@ -21,57 +21,55 @@ export function InputsForm() {
       <HeaderForm>
           <Address>
               <BiMap />
-              <span>Endereço de Entrega</span>
+              <span>Адрес доставки</span>
           </Address>
-          <p>Informe o endereço onde deseja receber seu pedido</p>
+          <p>Введите адрес, по которому вы хотите получить свой заказ</p>
       </HeaderForm>
       <FormBody>
           <Input 
               id="cpf-input"
               type="text"
-              placeholder="CEP"
+              placeholder="Номер паспорта"
               {...register('cep')}
               error={errors.cep?.message}
           />
           <Input 
               id="street-input"
               type="text"
-              placeholder="Rua"
+              placeholder="Улица"
               {...register('street')}
               error={errors.street?.message}
           />
           <Input 
               id="number-input"
               type="text"
-              placeholder="Numero"
+              placeholder="номер дома"
               {...register('streetNumber')}
               error={errors.streetNumber?.message}
           />
           <Input 
               id="complement-input"
               type="text"
-              placeholder="Complemento"
+              placeholder="Дополнение"
               {...register('complement')}
-              error={errors.complement?.message}
           />
           <Input 
               id="neighborhood-input"
               type="text"
-              placeholder="Bairro"
+              placeholder="Район"
               {...register('neighborhood')}
-              error={errors.neighborhood?.message}
-          />
+         />
           <Input 
               id="city-input"
               type="text"
-              placeholder="Cidade"
+              placeholder="Город"
               {...register('city')}
               error={errors.city?.message}
           />
           <Input 
               id="uf-input"
               type="text"
-              placeholder="UF"
+              placeholder="Область"
               {...register('state')}
               error={errors.state?.message}
           />

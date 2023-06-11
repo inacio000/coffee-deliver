@@ -70,7 +70,7 @@ export const Form = styled.div`
 
   .error {
     color: var(--base-error);
-    padding-left: 0.2rem;
+    font-size: 0.75rem;
   }
 
   @media (max-width: 300px) {

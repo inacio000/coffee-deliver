@@ -59,7 +59,7 @@ export function CoffeeCartCard() {
 
   return (
     <RightContent>
-        <h3>Complete seu pedido</h3>
+        <h3>Выбранные кофе</h3>
         <Cart>
             <CartFooter>
                 <div className="cart-list">
@@ -91,35 +91,35 @@ export function CoffeeCartCard() {
                                             onClick={() => handleCoffeeRemove(coffee.id)}
                                             type="button">
                                             <RiDeleteBin6Line />
-                                            <p>REMOVER</p>
+                                            <p>УДАЛИТЬ</p>
                                         </button>
                                     </span>
                                 </div>
-                                <h4>R$ {formattedPrice(coffee.price)}</h4>
+                                <h4>₽ {formattedPrice(coffee.price)}</h4>
                             </ContentCardCart>
                         ))
                     }
                 </div>
                 <div>
-                    <p>Total de itens</p>
-                    <p>R$ {subTotal}</p>
+                    <p>Итого кофе</p>
+                    <p>₽ {subTotal}</p>
                 </div>
 
                 <div>
-                    <p>Entrega</p>
-                    <p>R$ {shippingPrice}</p>
+                    <p>Доставка</p>
+                    <p>₽ {shippingPrice}</p>
                 </div>
 
                 <div>
-                    <h3>Total</h3>
-                    <h3>R$ {total}</h3>
+                    <h3>Итого</h3>
+                    <h3>₽ {total}</h3>
                 </div>
                 <button
                     type="submit"
                     className="submit-btn"
                     disabled={cart.length <= 0}
                 >
-                    CONFIRMAR PEDIDO
+                    ПЕРЕЙТИ К ОФОРМЛЕНИЮ
                 </button>
             </CartFooter>
         </Cart>

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const CardItemn = styled.div`
+export const CardItem = styled.div`
   width: 256px;
-  height: 300px;
+  height: 310px;
   padding: 0 1.5rem 0.2rem;
   border-radius: 0.357rem 2.25rem;
   background: var(--base-card);
@@ -14,14 +14,17 @@ export const CardItemn = styled.div`
   img {
     width: 120px;
     height: 120px;
-    margin: -2rem 0 1rem;
+    margin: -2rem 0 2rem;
   }
 
   @media (max-width: 300px) {
     width: 200px;
+    height: auto;
+    padding-bottom: 0.5rem;
 
     img {
       width: 100px;
+      height: 100px;
     }
   }
 `;
@@ -37,6 +40,7 @@ export const MainCard = styled.div`
     gap: 0.5rem;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     
     span {
       padding: 4px 8px;

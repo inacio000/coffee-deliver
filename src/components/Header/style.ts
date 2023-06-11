@@ -76,7 +76,7 @@ export const Location = styled.div`
     width: 1.5rem;
   }
 
-  @media (max-width: 320px) {
+  @media (max-width: 340px) {
     justify-content: center;
 
     p {

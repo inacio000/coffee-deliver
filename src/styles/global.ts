@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 
     ::-webkit-scrollbar-thumb {
         border-radius: 1.5rem;
-        background: var(--purple);
+        background: var(--yellow);
     }
 
     :root {

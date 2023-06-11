@@ -3,20 +3,19 @@ import { CiMoneyBill } from "react-icons/ci"
 import { Form, HeaderPaymen, MethodPayment, NavPay } from "../../pages/Order/style";
 import { TbCreditCard } from "react-icons/tb";
 import { useFormContext } from "react-hook-form";
-import { useState } from "react";
 import { PaymentMethodsButtons } from "../PaymentMethodsButtons";
 
 export const paymentMethods = {
     credit: {
-        label: "Cartão de crédito",
+        label: "кредитная карта",
         icon: <TbCreditCard />
     },
     debit: {
-        label: "Cartão de débito",
+        label: "Дебетовая карта",
         icon: <BsBank2 />
     },
     money: {
-        label: "Dinheiro",
+        label: "наличный",
         icon: <CiMoneyBill />
     }
 
@@ -32,9 +31,9 @@ export function PaymentMethods() {
       <HeaderPaymen>
           <NavPay>
               <BsCurrencyDollar />
-              <span>Pagamento</span>
+              <span>Оплата</span>
           </NavPay>
-          <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
+          <p>Оплата производится при доставке, выберите способ оплаты</p>
       </HeaderPaymen>
       <MethodPayment>
           {
