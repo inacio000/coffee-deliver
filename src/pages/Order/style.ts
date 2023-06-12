@@ -275,7 +275,7 @@ export const CartFooter = styled.div`
     background: var(--yellow);
     transition: all 0.3s;
 
-    &[type=submit]:disabled {
+    &[type="submit"]:disabled {
       cursor: not-allowed;
       opacity: 0.5;
     }
@@ -283,7 +283,7 @@ export const CartFooter = styled.div`
     &:not(:disabled):hover {
       background-color: var(--yellow-dark);
     }
-  }  
+  }
 
   h3 {
     padding: 0;
@@ -304,8 +304,8 @@ export const ContentCardCart = styled.div`
     gap: 0.5rem;
 
     &:first-child() {
-        color: var(--base-subtitle);
-      }
+      color: var(--base-subtitle);
+    }
 
     span {
       display: flex;
@@ -362,21 +362,30 @@ export const ContentCardCart = styled.div`
     gap: 0;
 
     align-items: center;
+      img {
+        grid-area: avatarCoffee;
+      }
+
+      div {
+        grid-area: div;
+      }
+
+      h4 {
+        grid-area: price;
+      }
 
     grid-template-areas:
       "avatarCoffee price"
       "avatarCoffee div";
   }
 
-  img {
-    grid-area: avatarCoffee;
-  }
-
-  div {
-    grid-area: div;
-  }
-
-  h4 {
-    grid-area: price;
+  @media (max-width: 350px) {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     gap: 0.5rem;
+     text-align: center;
+     padding: 0;
+     margin-right: 0;
   }
 `;

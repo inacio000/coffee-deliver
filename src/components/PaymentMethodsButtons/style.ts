@@ -29,6 +29,8 @@ export const PaymentInputContent = styled.div`
   color: var(--base-text);
   font-size: 0.75rem;
   text-transform: uppercase;
+  transition: all 0.3s;
+  cursor: pointer;
 
   &:hover {
     background-color: var(--base-hover);

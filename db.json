@@ -4,7 +4,7 @@
       "id": 1,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/c9c35646-03e7-450a-ade2-9ef9a90df27a",
       "typeCoffee": ["традиционное"],
-      "name": "Традиционный эспрессо",
+      "name": "традиционный эспрессо",
       "description": "Традиционный кофе, приготовленный из горячей воды и молотых зерен.",
       "price": 58.99
     },
@@ -44,7 +44,7 @@
       "id": 6,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/1f7211ea-e9d3-4f8a-8515-2fbe70332750",
       "typeCoffee": ["традиционное", "с молоком"],
-      "name": "Latte",
+      "name": "лате",
       "description": "Чашка эспрессо с вдвое большим количеством молока и сливочной пеной",
       "price": 99.99
     },
@@ -52,7 +52,7 @@
       "id": 7,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/1ca89aee-a73c-4b86-a393-34b0f2880c1c",
       "typeCoffee": ["традиционное", "с молоком"],
-      "name": "Капучино",
+      "name": "капучино",
       "description": "Напиток с корицей, приготовленный из равных доз кофе, молока и пены",
       "price": 89.99
     },
@@ -92,7 +92,7 @@
       "id": 12,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/f82bb304-7192-4564-b437-06e1111574d7",
       "typeCoffee": ["Специальный"],
-      "name": "Гавайское",
+      "name": "гавайское",
       "description": "Сладкий напиток, приготовленный из кофе и кокосового молока.",
       "price": 94.99
     },
@@ -116,7 +116,7 @@
       "id": 15,
       "avatar": "https://github.com/inacio000/coffee-deliver/assets/84747204/b3d8e0bf-f97c-4f68-932e-dfdeed9b0070",
       "typeCoffee": ["Специальный", "с молоком"],
-      "name": "Кортадо",
+      "name": "кортадо",
       "description": "Специальный напиток на основе кофе, молока и шоколада",
       "price": 109.99
     },
