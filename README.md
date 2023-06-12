@@ -8,11 +8,11 @@
 <p align="center">
   <img src="preview.png" alt="DevLinks Project" width="100%">
   <div 
-    style="display: flex; 
-    gap: 5px; 
-    flex-direction: column; 
-    align-items: center; 
-    border: 1px solid gray;"
+      align="center"
+      style="display: flex; 
+      gap: 5px; 
+      flex-direction: column; 
+      border: 1px solid gray;"
   >
     <img src="ShortsPreview/Short1.gif" width="80%">
     <img src="ShortsPreview/Short2.gif" width="80%">
