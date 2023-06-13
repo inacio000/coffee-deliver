@@ -1,17 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-
 export const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap');
-
-    @font-face {
-        font-family: 'Baloo 2', cursive;
-        src: url('../public/fonts/Baloo2/Baloo2-Bold.ttf') format('ttf'),
-             url('../public/fonts/Baloo2/Baloo2-ExtraBold.ttf') format('ttf');
-        font-weight: 800;
-        font-display: swap;
-    }
-
     ::-webkit-scrollbar {
        width: 0.3rem;
     }
@@ -56,6 +45,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: 'Baloo 2', cursive;
     }
 
     html {
@@ -82,11 +72,14 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     #root {
+        /* max-width: 1440px; */
         margin: 0 auto;
     }
 
     h1, h2, h3, h4, h5, h6, strong {
+        font-family: 'Baloo 2', cursive;
         color: var(--base-text);
+        font-weight: 800;
         line-height: 130%;
     }
     

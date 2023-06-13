@@ -16,7 +16,7 @@ export function Dashboard() {
                 >
                     <div className="coffee-title">
                         <h1>Найдите идеальный кофе для любого времени суток</h1>
-                        <p>С «CoffeeDelivery» вы можете получить свой кофе в любом месте и в любое время</p>
+                        <p>С «CoffeeDelivery» вы можете получить свой кофе в любом месте и в любое время...</p>
                     </div>
                     <div className="coffee-main">
                         <StepList>
