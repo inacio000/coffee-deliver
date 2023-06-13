@@ -16,7 +16,6 @@
 > - [Styled Component](https://styled-components.com/)
 > - [Hooks](https://legacy.reactjs.org/docs/hooks-intro.html)
 > - [Context API](https://legacy.reactjs.org/docs/context.html#reactcreatecontext)
-> - [Fake API com JSON Server](https://www.npmjs.com/package/json-server)
 > - [Zod](https://zod.dev/)
 > - [AOS Animation On Scroll](https://michalsnik.github.io/aos/)
 
