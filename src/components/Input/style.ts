@@ -11,21 +11,20 @@ export const InputElements = styled.div<InputProps>`
   position: relative;
 
   border-color: red;
-  
+
   > p {
     font-size: 0.75rem;
     color: var(--base-error);
   }
 
   ${({ error }) =>
-    error && css`
+    error &&
+    css`
       input:is(:focus) {
         outline: 1px red solid;
       }
-    `
-  }
-  
-`
+    `}
+`;
 
 export const InputStyle = styled.input`
   padding: 0.7rem;
@@ -41,10 +40,7 @@ export const InputStyle = styled.input`
   &::placeholder {
     color: var(--base-label);
   }
-  
-  
-
-`
+`;
 
 export const OptionalText = styled.p`
   font-size: 0.75rem;
@@ -53,4 +49,4 @@ export const OptionalText = styled.p`
   margin-right: 0.75rem;
 
   position: absolute;
-`
+`;

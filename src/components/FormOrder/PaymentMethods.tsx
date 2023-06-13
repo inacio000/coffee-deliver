@@ -22,34 +22,34 @@ export const paymentMethods = {
 }
 
 export function PaymentMethods() {
-  const { register, formState: { errors }  } = useFormContext();
+    const { register, formState: { errors } } = useFormContext();
 
-  const paymentMethodError = errors?.paymentMethod?.message as unknown as string;
+    const paymentMethodError = errors?.paymentMethod?.message as unknown as string;
 
-  return (
-    <Form>
-      <HeaderPaymen>
-          <NavPay>
-              <BsCurrencyDollar />
-              <span>Оплата</span>
-          </NavPay>
-          <p>Оплата производится при доставке, выберите способ оплаты</p>
-      </HeaderPaymen>
-      <MethodPayment>
-          {
-            Object.entries(paymentMethods).map(([key, {label, icon}]) => (
-                <PaymentMethodsButtons 
-                    key={label}
-                    id={key}
-                    icon={icon}                
-                    label={label}
-                    value={key}
-                    {...register('paymentMethod')}
-                />
-            ))
-          }
-      </MethodPayment>
-      {paymentMethodError && <p className="error">{paymentMethodError}</p>}
-    </Form>
-  )
+    return (
+        <Form>
+            <HeaderPaymen>
+                <NavPay>
+                    <BsCurrencyDollar />
+                    <span>Оплата</span>
+                </NavPay>
+                <p>Оплата производится при доставке, выберите способ оплаты</p>
+            </HeaderPaymen>
+            <MethodPayment>
+                {
+                    Object.entries(paymentMethods).map(([key, { label, icon }]) => (
+                        <PaymentMethodsButtons
+                            key={label}
+                            id={key}
+                            icon={icon}
+                            label={label}
+                            value={key}
+                            {...register('paymentMethod')}
+                        />
+                    ))
+                }
+            </MethodPayment>
+            {paymentMethodError && <p className="error">{paymentMethodError}</p>}
+        </Form>
+    )
 }

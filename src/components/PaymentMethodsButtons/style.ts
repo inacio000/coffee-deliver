@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const PaymentMethodContainer = styled.div`
-
   input {
     visibility: hidden;
     appearance: none;
@@ -43,4 +42,4 @@ export const PaymentInputContent = styled.div`
   }
 
   user-select: none;
-`
+`;

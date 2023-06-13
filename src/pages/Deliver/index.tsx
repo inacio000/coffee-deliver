@@ -14,13 +14,13 @@ export function Deliver() {
 
     useEffect(() => {
         {
-            if(!state) {
+            if (!state) {
                 navigate("/")
             }
         }
     }, []);
 
-    if(!state) return <></>
+    if (!state) return <></>
 
     return (
         <Container>

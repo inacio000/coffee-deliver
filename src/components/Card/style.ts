@@ -41,7 +41,7 @@ export const MainCard = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    
+
     span {
       padding: 4px 8px;
       font-weight: 700;
@@ -49,7 +49,7 @@ export const MainCard = styled.div`
       border-radius: 6.25rem;
       margin-bottom: 1rem;
       text-transform: uppercase;
-  
+
       background: var(--yellow-light);
       color: var(--yellow-dark);
     }
@@ -72,9 +72,9 @@ export const FooterCad = styled.div`
 
   p {
     span {
-    font-size: 10px;
+      font-size: 10px;
     }
-  } 
+  }
 
   div {
     display: flex;
@@ -87,7 +87,6 @@ export const FooterCad = styled.div`
     gap: 1rem;
   }
 `;
-
 
 export const Price = styled.div`
   line-height: 1.1255rem;
@@ -107,7 +106,7 @@ export const Price = styled.div`
     font-size: 1.4rem;
     line-height: 1.31rem;
   }
-`
+`;
 
 export const FooterButtons = styled.section`
   width: 72px;
@@ -124,7 +123,7 @@ export const FooterButtons = styled.section`
       cursor: not-allowed;
       opacity: 0.3;
     }
-    
+
     &:not(:disabled):hover {
       background-color: var(--base-hover);
     }

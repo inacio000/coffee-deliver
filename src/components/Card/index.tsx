@@ -19,9 +19,9 @@ export interface CoffeeCardProps {
 }
 
 export function Card({ coffee }: CoffeeCardProps) {
-    const {  addCoffee } = useCartCoffee();
+    const { addCoffee } = useCartCoffee();
     const [amountCoffee, setAmountCoffee] = useState(1);
-    
+
     function handleDecrement() {
         setAmountCoffee((stateAmount) => stateAmount - 1);
     }
@@ -69,7 +69,7 @@ export function Card({ coffee }: CoffeeCardProps) {
                         >
                             <AiOutlineMinus />
                         </button>
-                        <input 
+                        <input
                             type="text"
                             min={1}
                             onChange={handleChangeAmount}
@@ -89,6 +89,6 @@ export function Card({ coffee }: CoffeeCardProps) {
                     </CartIcon>
                 </div>
             </FooterCad>
-        </CardItem>            
+        </CardItem>
     )
 }

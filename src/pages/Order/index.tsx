@@ -16,15 +16,15 @@ enum PaymentMethods {
 
 const orderFormSchema = z.object({
     cep: z.string().min(1, 'Введите номер паспорта'),
-    street: z.string().min(1, 'информировать улицу'),
+    street: z.string().min(1, 'Введите улицу'),
     streetNumber: z.string().min(1, 'Введите номер дома'),
     complement: z.string().optional(),
     neighborhood: z.string().optional(),
     city: z.string().min(1, 'Введите город'),
     state: z.string().min(1, 'Введите Область'),
     paymentMethod: z.nativeEnum(PaymentMethods, {
-        errorMap:() => {
-            return { message: "Выберите способ оплаты"}
+        errorMap: () => {
+            return { message: "Выберите способ оплаты" }
         }
     })
 })
@@ -35,14 +35,14 @@ type ConfirmOrderFormData = NewOrderFormData;
 
 export function Order() {
     const { clearCart } = useCartCoffee()
-      
-    const newOrderForm = useForm<ConfirmOrderFormData>({ 
+
+    const newOrderForm = useForm<ConfirmOrderFormData>({
         resolver: zodResolver(orderFormSchema)
     })
 
     const navigate = useNavigate();
 
-    const { handleSubmit} = newOrderForm;
+    const { handleSubmit } = newOrderForm;
 
     const handleCreateNewOrder = (data: ConfirmOrderFormData) => {
         navigate("/deliver", {
@@ -57,8 +57,8 @@ export function Order() {
             <Container
                 onSubmit={handleSubmit(handleCreateNewOrder)}
             >
-                <FormOrder />  
-                <CoffeeCartCard />             
+                <FormOrder />
+                <CoffeeCartCard />
             </Container>
         </FormProvider>
     )

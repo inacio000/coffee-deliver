@@ -10,24 +10,23 @@ export const Container = styled.div`
   margin-top: 10rem;
 
   background: url(${background}) no-repeat top center/cover;
-
 `;
 
 export const Content = styled.div`
-    width: 1440px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0rem 1rem 5rem;
+  width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1rem 5rem;
 
-    @media (max-width: 1030px) {
-      text-align: center;
-      align-items: center;
-      flex-direction: column;
-    }
+  @media (max-width: 1030px) {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
-    @media (max-width: 570px) {
-      padding-bottom: 2.5rem;
-    }
+  @media (max-width: 570px) {
+    padding-bottom: 2.5rem;
+  }
 `;
 
 export const LeftContent = styled.div`

@@ -6,7 +6,7 @@ export function DefaultLayout() {
 
     return (
         <>
-            <Header isFixed={location.pathname === '/' && true}/>
+            <Header isFixed={location.pathname === '/' && true} />
             <Outlet />
         </>
     )

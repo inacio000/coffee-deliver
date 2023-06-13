@@ -44,7 +44,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     const cartPreviousValue = prevCartRef.current ?? cart;
 
     useEffect(() => {
-        if (cartPreviousValue !== cart)  {
+        if (cartPreviousValue !== cart) {
             localStorage.setItem('@CoffeeDelivery:cart', JSON.stringify(cart));
         }
     }, [cart, cartPreviousValue])
@@ -56,7 +56,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
             const updateCart = [...cart];
             const coffeeExists = updateCart.find((coffee) => coffee.id === coffeeId);
 
-            if(coffeeExists) {
+            if (coffeeExists) {
                 coffeeExists.amount += amount;
             } else {
                 const coffee = await api.get(`/coffees/${coffeeId}`);
@@ -70,7 +70,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
             setCart(updateCart);
             toast.success('Produto adicionado no carrinho!')
-           
+
         } catch {
             toast.error('Erro na adição do produto');
         }
@@ -95,14 +95,14 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
     function updateCoffeeAmount({ coffeeId, amount }: UpdateCoffeeAmount) {
         try {
-            if(amount <= 0 || amount > 10) {
+            if (amount <= 0 || amount > 10) {
                 return
             }
 
             const updateCart = [...cart];
             const coffeeExists = updateCart.find((coffee) => coffee.id === coffeeId);
 
-            if(coffeeExists) {
+            if (coffeeExists) {
                 coffeeExists.amount = amount;
                 setCart(updateCart);
             } else {
@@ -120,7 +120,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
     return (
         <CartContext.Provider
-            value={{ cart, addCoffee, removeCoffee, updateCoffeeAmount, clearCart}}
+            value={{ cart, addCoffee, removeCoffee, updateCoffeeAmount, clearCart }}
         >
             {children}
         </CartContext.Provider>

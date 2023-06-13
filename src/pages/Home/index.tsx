@@ -24,7 +24,7 @@ export function Home() {
 
             setCoffees(data);
         }
-        
+
         loadCoffees();
     }, [])
 
@@ -36,7 +36,7 @@ export function Home() {
                 <Cards>
                     {
                         coffees.map((coffee) => (
-                            <Card 
+                            <Card
                                 coffee={coffee}
                                 key={coffee.id}
                             />

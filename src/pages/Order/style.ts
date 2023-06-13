@@ -362,17 +362,17 @@ export const ContentCardCart = styled.div`
     gap: 0;
 
     align-items: center;
-      img {
-        grid-area: avatarCoffee;
-      }
+    img {
+      grid-area: avatarCoffee;
+    }
 
-      div {
-        grid-area: div;
-      }
+    div {
+      grid-area: div;
+    }
 
-      h4 {
-        grid-area: price;
-      }
+    h4 {
+      grid-area: price;
+    }
 
     grid-template-areas:
       "avatarCoffee price"
@@ -380,12 +380,12 @@ export const ContentCardCart = styled.div`
   }
 
   @media (max-width: 350px) {
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     gap: 0.5rem;
-     text-align: center;
-     padding: 0;
-     margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 0;
+    margin-right: 0;
   }
 `;
