@@ -7,17 +7,6 @@
 
 <p align="center">
   <img src="preview.png" alt="DevLinks Project" width="100%">
-  <div 
-      align="center"
-      style="display: flex; 
-      gap: 5px; 
-      flex-direction: column; 
-      border: 1px solid gray;"
-  >
-    <img src="ShortsPreview/Short1.gif" width="80%">
-    <img src="ShortsPreview/Short2.gif" width="80%">
-    <img src="ShortsPreview/Short3.gif" width="80%">
-  </div>
 </p>
 
 # 🚀 Techs
@@ -27,7 +16,6 @@
 > - [Styled Component](https://styled-components.com/)
 > - [Hooks](https://legacy.reactjs.org/docs/hooks-intro.html)
 > - [Context API](https://legacy.reactjs.org/docs/context.html#reactcreatecontext)
-> - [Fake API com JSON Server](https://www.npmjs.com/package/json-server)
 > - [Zod](https://zod.dev/)
 > - [AOS Animation On Scroll](https://michalsnik.github.io/aos/)
 
@@ -36,11 +24,10 @@
 To practice the ReactJS basic concepts.
 
 # Running the Project
+## `Make sure you are in the "develop" branch`
 - Clone repository
   > git clone https://github.com/inacio000/coffee-deliver.git
 - Install dependencies
   > npm install
-- Start Server
-  >  json-server -p 3001 db.json
 - Run frontend
   > npm start
