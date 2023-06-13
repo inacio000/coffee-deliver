@@ -18,7 +18,6 @@ export const paymentMethods = {
         label: "наличный",
         icon: <CiMoneyBill />
     }
-
 }
 
 export function PaymentMethods() {

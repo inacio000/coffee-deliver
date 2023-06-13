@@ -96,14 +96,14 @@ export const Price = styled.div`
   span {
     display: flex;
     align-self: flex-end;
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
   strong {
     display: flex;
     align-self: flex-end;
     font-weight: 800;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.31rem;
   }
 `;

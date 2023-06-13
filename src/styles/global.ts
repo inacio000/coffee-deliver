@@ -38,6 +38,8 @@ export const GlobalStyle = createGlobalStyle`
 
         --icons-color: #FAFAFA;
 
+        --section-bg: #f1e9c986;
+
         --border-color: linear-gradient(102.89deg, #DBAC2C 2.61%, #8047F8 98.76%);
     }
 
@@ -71,14 +73,12 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     #root {
-        /* max-width: 1440px; */
         margin: 0 auto;
     }
 
     h1, h2, h3, h4, h5, h6, strong {
-        font-family: 'Baloo 2', cursive;
+        font-family: 'Days One', sans-serif;
         color: var(--base-text);
-        font-weight: 800;
         line-height: 130%;
     }
     
