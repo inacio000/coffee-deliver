@@ -1,9 +1,7 @@
 import { Container, Content, ContentLeft, Icon, Order } from "./style";
 import illustration from "../../assets/icons/Illustration.svg"
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { NewOrderFormData } from "../Order";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
-import { formattedPrice } from "../../util/format";
+import { useLocation, useNavigate } from "react-router-dom";
 import { LocationType } from "../../types";
 import { paymentMethods } from "../../components/FormOrder/PaymentMethods";
 import { useEffect } from "react";

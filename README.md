@@ -7,17 +7,6 @@
 
 <p align="center">
   <img src="preview.png" alt="DevLinks Project" width="100%">
-  <div 
-      align="center"
-      style="display: flex; 
-      gap: 5px; 
-      flex-direction: column; 
-      border: 1px solid gray;"
-  >
-    <img src="ShortsPreview/Short1.gif" width="80%">
-    <img src="ShortsPreview/Short2.gif" width="80%">
-    <img src="ShortsPreview/Short3.gif" width="80%">
-  </div>
 </p>
 
 # 🚀 Techs
@@ -36,11 +25,10 @@
 To practice the ReactJS basic concepts.
 
 # Running the Project
+## `Make sure you are in the "develop" branch`
 - Clone repository
   > git clone https://github.com/inacio000/coffee-deliver.git
 - Install dependencies
   > npm install
-- Start Server
-  >  json-server -p 3001 db.json
 - Run frontend
   > npm start
