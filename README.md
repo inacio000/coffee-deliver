@@ -24,7 +24,7 @@
 To practice the ReactJS basic concepts.
 
 # Running the Project
-## `Make sure you are in the "develop" branch`
+## `Make sure you are in the "main" branch`
 - Clone repository
   > git clone https://github.com/inacio000/coffee-deliver.git
 - Install dependencies
