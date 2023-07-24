@@ -25,6 +25,7 @@ To practice the ReactJS basic concepts.
 
 # Running the Project
 ## `Make sure you are in the "main" branch`
+## Or you may check the project done with JSON Server, [here](https://github.com/inacio000/coffee-deliver/tree/feture-fake-api-with-json-server)
 - Clone repository
   > git clone https://github.com/inacio000/coffee-deliver.git
 - Install dependencies
