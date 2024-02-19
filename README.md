@@ -4,6 +4,7 @@
 
 <h1 align="center">Rocketseat Challenge</h1>
 <h2 align="center">Ignite ReactJS</h2>
+<h2 align="center">Responsive</h2>
 
 <p align="center">
   <img src="preview.png" alt="DevLinks Project" width="100%">
@@ -24,7 +25,8 @@
 To practice the ReactJS basic concepts.
 
 # Running the Project
-## `Make sure you are in the "develop" branch`
+## `Make sure you are in the "main" branch`
+## Or you may check the project done with JSON Server, [here](https://github.com/inacio000/coffee-deliver/tree/feture-fake-api-with-json-server)
 - Clone repository
   > git clone https://github.com/inacio000/coffee-deliver.git
 - Install dependencies
