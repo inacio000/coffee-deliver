@@ -20,7 +20,6 @@ export function CoffeeCartCard() {
         ...coffee,
         priceFormatted: formattedPrice(coffee.price),
         subTotal: formattedPrice(coffee.price * coffee.amount),
-        entrega: formattedPrice((coffee.price * coffee.amount) * 0.1)
     }))
 
     const subTotal = formattedPrice(
@@ -30,12 +29,15 @@ export function CoffeeCartCard() {
         }, 0)
     )
 
-    const shippingPrice = cart.length > 0 ? 2.5 : 0;
+    const shippingPrice = cart.length > 0 ? cart.map((coffee) => ({
+        ...coffee,
+        shippingPrice: formattedPrice((coffee.price * coffee.amount) * 0.1)
+    })) : 0;
 
     const total = formattedPrice(
-        cart.reduce((sumTotal, coffee, entrega) => {
+        cart.reduce((sumTotal, coffee, shippingPrice: number) => {
 
-            return sumTotal + coffee.price * coffee.amount + entrega
+            return sumTotal + coffee.price * coffee.amount + shippingPrice
         }, 0)
     )
 
@@ -107,7 +109,7 @@ export function CoffeeCartCard() {
 
                     <div>
                         <p>Доставка</p>
-                        <p>₽ {shippingPrice}</p>
+                        <p>₽ {Number(shippingPrice)}</p>
                     </div>
 
                     <div>
